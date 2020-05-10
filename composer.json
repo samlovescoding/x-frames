@@ -1,0 +1,21 @@
+{
+    "name": "samlovescoding/x-frames",
+    "description": "PHP Template Engine and a Component Library",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sampan Verma",
+            "email": "sampan.developer@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "XFrames\\Components\\":"Components",
+            "XFrames\\Traits\\":"Traits",
+            "XFrames\\Utility\\":"Utility"
+        }
+    }
+}
