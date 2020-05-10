@@ -13,10 +13,10 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "XFrames\\Components\\"         :"src/Components",
             "XFrames\\Traits\\"             :"src/Traits",
+            "XFrames\\Utility\\"            :"src/Utility",
             "XFrames\\Library\\"            :"src/Library",
-            "XFrames\\Utility\\"            :"src/Utility"
+            "XFrames\\Components\\"         :"src/Components"
         },
         "files": [
             "src/helpers/include.php"
