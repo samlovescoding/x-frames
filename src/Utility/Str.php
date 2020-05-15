@@ -25,6 +25,15 @@ class Str{
         return $this;
     }
 
+    public function upper(){
+        $this->data = strtoupper($this->data);
+        return $this;
+    }
+
+    public function length(){
+        return strlen($this->data);
+    }
+
     public function split($separator){
         return (new Collection())->setArray(explode($separator, $this->data));
     }
