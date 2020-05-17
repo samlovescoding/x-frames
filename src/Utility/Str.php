@@ -2,10 +2,11 @@
 
 namespace XFrames\Utility;
 
+use XFrames\Blueprints\DumpAndDie;
 use XFrames\Traits\Stringable;
 
 class Str{
-    use Stringable;
+    use Stringable, DumpAndDie;
 
     const CAMEL_CASE = 1;
     const SNAKE_CASE = 2;
@@ -25,8 +26,41 @@ class Str{
         return (substr($this->data, -$length) === $suffix); 
     }
 
+    public function leftShift($prefix){
+        $this->data = substr($this->data, strlen($prefix));
+        
+        return $this;
+    }
+
+    public function rightShift($suffix){
+        $this->data = substr($this->data, 0, strlen($this->data) - strlen($suffix));
+        return $this;
+    }
+
+    public function prefix(string $appendage){
+        $this->data = $appendage . $this->data;
+        return $this;
+    }
+
+    public function suffix(string $appendage){
+        $this->data = $this->data . $appendage;
+        return $this;
+    }
+
     public function contains(string $needle){
         return strpos($this->data, $needle) !== false;
+    }
+
+    public function before(string $separator){
+        $shrapnel = $this->split($separator)->toArray();
+        $this->data = array_shift($shrapnel);
+        return $this;
+    }
+
+    public function after(string $separator){
+        $shrapnel = $this->split($separator)->toArray();
+        $this->data = array_pop($shrapnel);
+        return $this;
     }
 
     public function lower(){
@@ -132,6 +166,21 @@ class Str{
             
             ->join("-");
         
+        return $this;
+    }
+
+    public function trim(string $charlist = " \t\n\r\0\x0B"){
+        $this->data = trim($this->data, $charlist);
+        return $this;
+    }
+
+    public function ltrim(string $charlist = " \t\n\r\0\x0B"){
+        $this->data = ltrim($this->data, $charlist);
+        return $this;
+    }
+
+    public function rtrim(string $charlist = " \t\n\r\0\x0B"){
+        $this->data = rtrim($this->data, $charlist);
         return $this;
     }
     

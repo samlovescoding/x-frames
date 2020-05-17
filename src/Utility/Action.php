@@ -2,12 +2,15 @@
 
 namespace XFrames\Utility;
 
+use XFrames\Blueprints\RouteParam;
 use XFrames\Blueprints\Runnable;
+use XFrames\Library\Router;
 
 class Action extends Runnable{
     protected $className;
     protected string $method;
     protected bool $isStatic;
+    protected Router $router;
 
     public function __construct($className = null, string $method = "dd", bool $isStatic = false) {
         $this->className = $className;
@@ -28,9 +31,38 @@ class Action extends Runnable{
         }
     }
 
-    public function run(){
+    protected function getReflection(){
+        if($this->className == null){
+            return new \ReflectionFunction($this->method);
+        }else{
+            return new \ReflectionMethod($this->className, $this->method);
+        }
+    }
+
+    protected function getRouteWildcard($parameter){
+        return $this->router->routeParameters[":" . $parameter];
+    }
+
+    public function buildDependencies($reflection){
+        $dependencies = [];
+        foreach ($reflection->getParameters() as $index => $parameter) {
+            $reflectionType = $parameter->getType();
+            if($reflectionType == null){
+                $parameterName = $parameter->getName();
+                $dependencies[] = $this->getRouteWildcard($parameterName);
+                continue;
+            }
+            $dependencies[] = resolve($reflectionType);
+        }
+        return $dependencies;
+    }
+
+    public function run(Router $router){
+        $this->router = $router;
         $parameters = func_get_args();
-        call_user_func_array($this->getCallable(), $parameters);
+        $reflection = $this->getReflection();
+        $dependencies = $this->buildDependencies($reflection);
+        call_user_func_array($this->getCallable(), $dependencies);
     }
 
     static public function fromString(string $runnableString){

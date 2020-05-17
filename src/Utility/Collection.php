@@ -2,10 +2,11 @@
 
 namespace XFrames\Utility;
 
+use XFrames\Blueprints\DumpAndDie;
 use XFrames\Traits\Arrayable;
 
 class Collection{
-    use Arrayable;
+    use Arrayable, DumpAndDie;
 
     public function has($key){
         return in_array($key, $this->array);
@@ -57,6 +58,11 @@ class Collection{
 
     public function pop(){
         return array_pop($this->array);
+    }
+
+    public function popAndDispose(){
+        array_pop($this->array);
+        return $this;
     }
 
     public function random(){
