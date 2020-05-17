@@ -1,25 +1,20 @@
 <?php
 
-use XFrames\Utility\Str;
+use XFrames\Utility\Action;
 
 require "../vendor/autoload.php";
 
-echo str("please_convert_this_to_camel")->camelCase();
-
-echo " ";
-
-echo str("pleaseConvertThisToSnake")->snakeCase();
-
-class ComponentHelper{
-    public static function __callStatic($name, $parameters){
-        return resolve("XFrames\\Components\\" . ucfirst($name));
+class Hello{
+    public function world(){
+        echo "Hello World from Hello@world";
+    }
+    static public function universe(){
+        echo "Hello Universe from Hello::universe";
     }
 }
 
-function component(){
-    return resolve(ComponentHelper::class);
+function hello_world(){
+    echo "Hello World from hello_world";
 }
 
-singleton(ComponentHelper::class);
-
-echo component()::fragment();
+Action::fromString("Hello@universe")->run();

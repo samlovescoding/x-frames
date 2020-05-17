@@ -25,6 +25,10 @@ class Str{
         return (substr($this->data, -$length) === $suffix); 
     }
 
+    public function contains(string $needle){
+        return strpos($this->data, $needle) !== false;
+    }
+
     public function lower(){
         $this->data = strtolower($this->data);
         return $this;

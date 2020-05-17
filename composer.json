@@ -16,6 +16,7 @@
             "XFrames\\Traits\\"             :"src/Traits",
             "XFrames\\Utility\\"            :"src/Utility",
             "XFrames\\Library\\"            :"src/Library",
+            "XFrames\\Blueprints\\"         :"src/Blueprints",
             "XFrames\\Components\\"         :"src/Components"
         },
         "files": [
