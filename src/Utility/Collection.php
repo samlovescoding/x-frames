@@ -37,8 +37,8 @@ class Collection{
         $this->array = array_merge($this->array, $with);
     }
 
-    public function join(){
-        return (new Str())->set(implode(" ", $this->array));
+    public function join($glue = " "){
+        return (new Str())->set(implode($glue, $this->array));
     }
 
     public function all(){

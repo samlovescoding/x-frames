@@ -9,6 +9,9 @@ class Session{
     static function boot(){
         session_start();
     }
+    static function reset(){
+        session_destroy();
+    }
     public function has($key){
         return isset($_SESSION[$key]);
     }
