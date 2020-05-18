@@ -1,6 +1,6 @@
 <?php
 
-namespace XFrames\Traits;
+namespace XFrames\Blueprints;
 
 trait Arrayable {
     private array $array = [];

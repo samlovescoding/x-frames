@@ -2,7 +2,7 @@
 
 namespace XFrames\Utility;
 
-use XFrames\Blueprints\RouteParam;
+use XFrames\Blueprints\RouteParameter;
 use XFrames\Blueprints\Runnable;
 use XFrames\Library\Router;
 
@@ -49,8 +49,18 @@ class Action extends Runnable{
             $reflectionType = $parameter->getType();
             if($reflectionType == null){
                 $parameterName = $parameter->getName();
+                
                 $dependencies[] = $this->getRouteWildcard($parameterName);
                 continue;
+            }
+            $object = resolve($reflectionType);
+            if($object instanceof RouteParameter){
+                //unset($object);
+                $parameterName = $parameter->getName();
+                $dependencies[] = $object->getRouteObject($this->getRouteWildcard($parameterName));
+                continue;
+            }else{
+                echo $reflectionType;
             }
             $dependencies[] = resolve($reflectionType);
         }

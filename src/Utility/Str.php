@@ -3,9 +3,10 @@
 namespace XFrames\Utility;
 
 use XFrames\Blueprints\DumpAndDie;
-use XFrames\Traits\Stringable;
+use XFrames\Blueprints\RouteParameter;
+use XFrames\Blueprints\Stringable;
 
-class Str{
+class Str implements RouteParameter{
     use Stringable, DumpAndDie;
 
     const CAMEL_CASE = 1;
@@ -184,4 +185,7 @@ class Str{
         return $this;
     }
     
+    public function getRouteObject($routeParameter){
+        return (new self)->set($routeParameter);
+    }
 }

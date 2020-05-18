@@ -13,10 +13,9 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "XFrames\\Traits\\"             :"src/Traits",
+            "XFrames\\Blueprints\\"         :"src/Blueprints",
             "XFrames\\Utility\\"            :"src/Utility",
             "XFrames\\Library\\"            :"src/Library",
-            "XFrames\\Blueprints\\"         :"src/Blueprints",
             "XFrames\\Components\\"         :"src/Components"
         },
         "files": [

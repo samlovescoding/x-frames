@@ -2,7 +2,7 @@
 
 namespace XFrames\Blueprints;
 
-abstract class Runnable{
+abstract class Runnable {
     protected string $class;
     protected string $method;
     protected bool $isStatic;

@@ -3,7 +3,7 @@
 namespace XFrames\Utility;
 
 use XFrames\Blueprints\DumpAndDie;
-use XFrames\Traits\Arrayable;
+use XFrames\Blueprints\Arrayable;
 
 class Collection{
     use Arrayable, DumpAndDie;
