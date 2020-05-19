@@ -18,8 +18,11 @@ class Blogs{
 
 function home(){
     $blog = resolve(Blogs::class);
-    $blog->getTitle();
-    echo "We are home";
+    $blog->setTitle("Me");
+    echo $blog->getTitle();
+    $blog->setNoOfArticles(40);
+    echo $blog->getNoOfArticles();
+    
 }
 
 Route::get("/", "home");
