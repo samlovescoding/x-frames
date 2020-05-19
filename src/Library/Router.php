@@ -138,6 +138,13 @@ class Router{
         return $this->getErrorRoute();
     }
 
+    /*
+     *
+     * Runs the action of the current route.
+     * 
+     * @return void
+     * 
+     */
     public function dispatch(){
         return $this->getCurrentRoute()->run($this);
     }

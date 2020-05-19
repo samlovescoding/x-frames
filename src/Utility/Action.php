@@ -7,6 +7,7 @@ use XFrames\Blueprints\Runnable;
 use XFrames\Library\Router;
 
 class Action extends Runnable{
+
     protected $className;
     protected string $method;
     protected bool $isStatic;
@@ -18,6 +19,14 @@ class Action extends Runnable{
         $this->isStatic = $isStatic;
     }
 
+
+    /*
+     * 
+     * Get a name of the original function or method
+     * 
+     * @return string|array
+     * 
+     */
     protected function getCallable(){
         if($this->className == null){
             return $this->method;
@@ -31,6 +40,14 @@ class Action extends Runnable{
         }
     }
 
+
+    /*
+     *
+     * Get a reflection of the action call
+     * 
+     * @return ReflectionMethod|ReflectionFunction
+     * 
+     */
     protected function getReflection(){
         if($this->className == null){
             return new \ReflectionFunction($this->method);
@@ -39,10 +56,25 @@ class Action extends Runnable{
         }
     }
 
+
+    /*
+     * 
+     * Get wildcard data from the requested route
+     * 
+     * @return string
+     * 
+     */
     protected function getRouteWildcard($parameter){
         return $this->router->routeParameters[":" . $parameter];
     }
 
+    /*
+     * 
+     * Builds dependencies for DI in injections
+     * 
+     * @return array
+     * 
+     */
     public function buildDependencies($reflection){
         $dependencies = [];
         foreach ($reflection->getParameters() as $index => $parameter) {
@@ -67,6 +99,14 @@ class Action extends Runnable{
         return $dependencies;
     }
 
+
+    /*
+     *
+     * Run the action
+     * 
+     * @return void
+     * 
+     */
     public function run(Router $router){
         $this->router = $router;
         $parameters = func_get_args();
@@ -75,6 +115,28 @@ class Action extends Runnable{
         call_user_func_array($this->getCallable(), $dependencies);
     }
 
+    /*
+     *
+     * Build an action from any type of data
+     * 
+     * @return XFrames\Utility\Action
+     * 
+     */
+    static public function from($runnable){
+        if($runnable instanceof string){
+            return static::fromString($runnable);
+        }elseif($runnable instanceof \Closure){
+            return dd($runnable);
+        }
+    }
+
+    /*
+     *
+     * Build an action from a string
+     * 
+     * @return XFrames\Utility\Action
+     * 
+     */
     static public function fromString(string $runnableString){
         $runnable = str($runnableString);
         if($runnable->contains("@")){
