@@ -1,4 +1,13 @@
 {
+    "name": "samlovescoding/x",
+    "type": "project",
+    "description": "The X Framework.",
+    "keywords": [
+        "framework",
+        "components",
+        "query-builder",
+        "database"
+    ],
     "autoload": {
         "psr-4": {
             "App\\" : "App",
