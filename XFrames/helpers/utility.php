@@ -1,6 +1,6 @@
 <?php
 
-use XFrames\Utility\{ Collection, Str };
+use XFrames\Utility\{ Collection, Request, Str };
 
 function collect($array = []){
     return (new Collection())->setArray($array);
@@ -8,6 +8,10 @@ function collect($array = []){
 
 function str($data){
     return (new Str())->set($data);
+}
+
+function request(){
+    return resolve(Request::class);
 }
 
 function getClassesUnderNamespace($namespace){

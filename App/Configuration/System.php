@@ -30,6 +30,16 @@ class System{
          * 
          */
         "controllerNamespace" => "App\\Controllers\\",
+
+        /*
+         *
+         * Views Folder
+         * 
+         * It defines the default folder of views.
+         * 
+         */
+
+         "viewsFolder" => "App/Views/"
         
     ];
 }

@@ -18,7 +18,11 @@ class QueryBuilder{
     public bool $autoExecute = true;
     public bool $autoReset = true;
 
-    public function __construct(DatabaseDriver $driver = null) {
+    public function __construct() {
+        $this->connect();
+    }
+
+    public function connect(DatabaseDriver $driver = null) {
 
         if($driver == null){
             $this->driver = resolve(MySQLDriver::class);

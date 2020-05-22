@@ -49,6 +49,7 @@ class Action extends Runnable{
      * 
      */
     protected function getReflection(){
+        
         if($this->className == null){
             return new \ReflectionFunction($this->method);
         }else{
@@ -85,7 +86,9 @@ class Action extends Runnable{
                 $dependencies[] = $this->getRouteWildcard($parameterName);
                 continue;
             }
+            
             $object = resolve($reflectionType);
+            
             if($object instanceof RouteParameter){
                 //unset($object);
                 $parameterName = $parameter->getName();

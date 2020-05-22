@@ -19,22 +19,30 @@ class HomeController{
         // ]);
         
 
-        $db ->where([
-                "name" => "Sampan"
-            ])
-            ->set([
-                "name" => "Sampan Verma"
-            ])
-            ->update("users");
+        // $db ->where([
+        //         "name" => "Sampan"
+        //     ])
+        //     ->set([
+        //         "name" => "Sampan Verma"
+        //     ])
+        //     ->update("users");
         
-        $db->autoReset = false;
         $rows = $db ->select("name", "email", "username")
             ->where([
                 "name !=" => "Sampan"
             ])
+            ->order("name")
             ->get("users");
-        dd($db->getCurrentQuery());
+
+        dd($rows);
         
+
+        // $db ->where([
+        //         "name" => "Sampan"
+        //     ])
+        //     ->delete("users");
+        
+        // dd($db->driver->getAffectedRows());
         
     }
 

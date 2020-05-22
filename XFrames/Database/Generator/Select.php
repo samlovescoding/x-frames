@@ -12,6 +12,8 @@ trait Select{
 
     public int $offsetColumns = 0;
 
+    public array $orderColumns = [];
+
     /*
      *
      * Publicly Accessible Function
@@ -28,7 +30,8 @@ trait Select{
             "columns" => $this->columnsSubQuery(),
             "table" => $table,
             "where" => $this->whereSubQuery(),
-            "limit" => $this->limitSubQuery()
+            "limit" => $this->limitSubQuery(),
+            "order" => $this->orderSubQuery()
         ])->get();
 
         $this->setCurrentQuery($selectQuery);
@@ -57,6 +60,11 @@ trait Select{
 
     public function offset(int $offset){
         $this->offsetColumns = $offset;
+        return $this;
+    }
+
+    public function order(string $column, string $order = "ASC"){
+        $this->orderColumns = [$column, $order];
         return $this;
     }
 
@@ -132,6 +140,17 @@ trait Select{
 
         return $limitSubQuery;
 
+    }
+
+    protected function orderSubQuery(){
+        if($this->orderColumns == []){
+            return "";
+        }else{
+            return str($this->driver->getTemplate("order"))->substitute([
+                "column" => $this->orderColumns[0],
+                "order" => $this->orderColumns[1]
+            ])->get();
+        }
     }
 
 }

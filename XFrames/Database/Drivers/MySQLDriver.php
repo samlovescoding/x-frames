@@ -11,13 +11,14 @@ class MySQLDriver extends DatabaseDriver{
     public $templates = [
         // Main Queries
         "insert" => "INSERT INTO {table} {columns} VALUES ({values});",
-        "select" => "SELECT {columns} FROM {table} {where} {limit};",
+        "select" => "SELECT {columns} FROM {table} {where} {limit} {order};",
         "update" => "UPDATE {table} SET {columns} {where};",
         "delete" => "DELETE FROM {table} {where};",
 
         // Sub Queries
         "where" => "WHERE {subquery}",
         "limit" => "LIMIT {offset}, {limit}",
+        "order" => "ORDER BY {column} {order}"
     ];
 
     public function getTemplate(string $key){
