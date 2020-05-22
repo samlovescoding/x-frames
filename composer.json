@@ -2,6 +2,7 @@
     "name": "samlovescoding/x",
     "type": "project",
     "description": "The X Framework.",
+    "license" : "ISC",
     "keywords": [
         "framework",
         "components",
