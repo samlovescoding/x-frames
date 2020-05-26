@@ -1,0 +1,21 @@
+{
+    "name": "samlovescoding/x",
+    "type": "project",
+    "description": "The X Framework.",
+    "license" : "ISC",
+    "keywords": [
+        "framework",
+        "components",
+        "query-builder",
+        "database"
+    ],
+    "autoload": {
+        "files": [
+            "XFrames/helpers/include.php"
+        ],
+        "psr-4": {
+            "App\\" : "App",
+            "XFrames\\" : "XFrames"
+        }
+    }
+}
