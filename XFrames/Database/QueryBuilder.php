@@ -14,9 +14,9 @@ class QueryBuilder{
 
     use Insert, Select, Update, Delete,  Attributes;
 
-    public DatabaseDriver $driver;
-    public bool $autoExecute = true;
-    public bool $autoReset = true;
+    public $driver;
+    public $autoExecute = true;
+    public $autoReset = true;
 
     public function __construct() {
         $this->connect();
