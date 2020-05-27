@@ -4,15 +4,15 @@ namespace XFrames\Database\Generator;
 
 trait Select{
 
-    public array $selectColumns = ["*"];
+    public $selectColumns = ["*"];
 
-    public array $whereColumns = [];
+    public $whereColumns = [];
 
-    public int $limitColumns = -1;
+    public $limitColumns = -1;
 
-    public int $offsetColumns = 0;
+    public $offsetColumns = 0;
 
-    public array $orderColumns = [];
+    public $orderColumns = [];
 
     /*
      *

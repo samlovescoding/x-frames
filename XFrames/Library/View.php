@@ -5,7 +5,7 @@ namespace XFrames\Library;
 class View{
 
     public $file = "";
-    public array $viewParams = [];
+    public $viewParams = [];
 
     public function __construct($file = "", $viewParams = [], $render = true) {
         $this->file = $file;

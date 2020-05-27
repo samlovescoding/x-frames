@@ -47,7 +47,6 @@ class ArticleController{
     }
 
     public function store(){
-
         (new Article)->create(
             $this->request()
         );
@@ -62,7 +61,7 @@ class ArticleController{
 
     }
     
-    public function udpate(Article $article){
+    public function update(Article $article){
 
         $article->update(
             $this->request()

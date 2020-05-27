@@ -4,7 +4,7 @@ namespace XFrames\Database\Generator;
 
 trait Update{
 
-    public array $updateColumns;
+    public $updateColumns;
 
     public function update(string $table){
 

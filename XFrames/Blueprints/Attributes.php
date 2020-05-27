@@ -5,7 +5,7 @@ namespace XFrames\Blueprints;
 use Exception;
 
 trait Attributes{
-    protected array $attributes;
+    protected $attributes;
     public function hasAttribute($attributeName){
         if(!isset($this->attributes)){
             $this->attributes = [];

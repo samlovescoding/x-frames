@@ -6,10 +6,10 @@ use XFrames\Utility\Collection;
 use XFrames\Utility\Str;
 
 abstract class Component{
-    protected string $name;
-    protected Collection $attributes;
-    protected bool $closed = true;
-    protected string $slot;
+    protected $name;
+    protected $attributes;
+    protected $closed = true;
+    protected $slot;
 
     public function __construct(Str $name, Collection $attributes, Str $slot) {
         $this->name = $name;

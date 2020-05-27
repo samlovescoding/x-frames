@@ -6,9 +6,9 @@ use XFrames\Utility\Collection;
 
 class ServiceContainer{
     
-    protected Collection $bindings;
-    protected Collection $singletons;
-    protected Collection $activeSingletons;
+    protected $bindings;
+    protected $singletons;
+    protected $activeSingletons;
 
     public function __construct() {
         $this->bindings = new Collection();

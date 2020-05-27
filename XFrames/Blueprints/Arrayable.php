@@ -3,7 +3,7 @@
 namespace XFrames\Blueprints;
 
 trait Arrayable {
-    private array $array = [];
+    private $array = [];
 
     public function __construct(){
         if(func_num_args() > 0){

@@ -4,8 +4,8 @@ namespace XFrames\Utility;
 
 class Validator{
     
-    public array $request;
-    public array $rules;
+    public $request;
+    public $rules;
 
     public function __construct(array $request = [], array $rules = []) {
         $this->request = $request;

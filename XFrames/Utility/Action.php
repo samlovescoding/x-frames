@@ -9,9 +9,9 @@ use XFrames\Library\Router;
 class Action extends Runnable{
 
     protected $className;
-    protected string $method;
-    protected bool $isStatic;
-    protected Router $router;
+    protected $method;
+    protected $isStatic;
+    protected $router;
 
     public function __construct($className = null, string $method = "dd", bool $isStatic = false) {
         $this->className = $className;

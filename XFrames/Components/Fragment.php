@@ -6,7 +6,7 @@ use XFrames\Library\Component;
 use XFrames\Utility\Collection;
 
 class Fragment extends Component{
-    public Collection $components;
+    public $components;
 
     public function mounted() {
         $this->name = "div";

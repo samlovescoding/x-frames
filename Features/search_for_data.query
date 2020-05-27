@@ -1,0 +1,12 @@
+Articles.search("contains")
+
+Articles
+    id
+    title
+    slug
+    body
+    users = User
+
+Articles.create({
+    ...json
+})

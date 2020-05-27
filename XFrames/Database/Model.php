@@ -10,7 +10,7 @@ class Model implements RouteParameter{
     protected $index = "id";
     protected $isLoaded = false;
 
-    public QueryBuilder $queryBuilder;
+    public $queryBuilder;
 
     public function __construct() {
         $this->queryBuilder = resolve(QueryBuilder::class);

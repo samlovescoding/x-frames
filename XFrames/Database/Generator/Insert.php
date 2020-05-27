@@ -3,8 +3,6 @@
 namespace XFrames\Database\Generator;
 
 trait Insert{
-    
-    
 
     public function insert(string $table, array $values){
 

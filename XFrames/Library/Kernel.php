@@ -13,8 +13,8 @@ namespace XFrames\Library;
 
 class Kernel{
 
-    protected Router $router;
-    protected Configuration $configuration;
+    protected $router;
+    protected $configuration;
 
     public function __construct($configurationRoot, $configurationNamespace) {
 

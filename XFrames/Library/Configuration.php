@@ -8,7 +8,7 @@ class Configuration{
 
     public $hasKernel = false;
 
-    protected string $namespace = "";
+    protected $namespace = "";
 
     public function setKernel(){
         $this->hasKernel = true;

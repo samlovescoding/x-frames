@@ -4,7 +4,7 @@ namespace XFrames\Library;
 
 class Router{
 
-    public string $currentRouteURI;
+    public $currentRouteURI;
 
     public $routeParameters;
 

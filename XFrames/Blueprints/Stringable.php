@@ -3,7 +3,7 @@
 namespace XFrames\Blueprints;
 
 trait Stringable {
-    private string $data = "";
+    private $data = "";
 
     public function __construct(){
         if(func_num_args() > 0){

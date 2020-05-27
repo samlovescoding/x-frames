@@ -3,9 +3,9 @@
 namespace XFrames\Blueprints;
 
 abstract class Runnable {
-    protected string $class;
-    protected string $method;
-    protected bool $isStatic;
+    protected $class;
+    protected $method;
+    protected $isStatic;
     protected abstract function getCallable();
     //protected function run();
 }
