@@ -16,7 +16,7 @@ require "routes.php";
  * 
  */
 $kernel = new Kernel(
-    __DIR__ . "/App/Configuration/",         //Configuration Folder
+    __DIR__ . "/App/Configuration/",            //Configuration Folder
     "App\\Configuration\\"                      //Configuration Namespace
 );
 
@@ -34,4 +34,3 @@ $kernel->boot(__DIR__ . "/routes.php");
  * 
  */
 $kernel->render();
-

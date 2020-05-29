@@ -29,10 +29,10 @@ class ArticleController{
     }
 
     public function index(){
-        
-        $articles = (new Article)->all();
-        
-        view("articles/index", compact("articles"));
+        //(new Article)->all()
+        $articles = [];
+        $title = "Keemstar";
+        view("articles/index", compact("articles", "title"));
 
     }
 

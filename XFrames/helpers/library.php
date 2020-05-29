@@ -10,8 +10,21 @@ function config($className = null){
     return resolve(Configuration::class)->{$className}();
 }
 
-function view($file, $viewParams = []){
-    return (new View($file, $viewParams));
+singleton(View::class);
+
+function view($file, $parameters = []){
+    return resolve(View::class)
+            ->setFile($file)
+            ->setParameters($parameters)
+            ->render();
+}
+
+function layout($file){
+    resolve(View::class)->setLayout($file);
+}
+
+function content(){
+    resolve(View::class)->renderContent();
 }
 
 function redirect($to){

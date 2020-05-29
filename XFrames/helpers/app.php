@@ -35,3 +35,7 @@ function singletonAndResolve($resolvable){
     singleton($resolvable);
     return resolve($resolvable);
 }
+
+function run($resolvable){
+    return resolve($resolvable)->run();
+}
