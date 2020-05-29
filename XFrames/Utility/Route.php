@@ -6,7 +6,7 @@ use XFrames\Utility\Action;
 
 class Route{
     
-    public function error($actionable){
+    static public function error($actionable){
         global $_ROUTES;
         $_ROUTES["error"] = Action::fromString($actionable);
     }

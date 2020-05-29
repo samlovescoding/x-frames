@@ -3,11 +3,11 @@
 use XFrames\Utility\{ Collection, Request, Str };
 
 function collect($array = []){
-    return (new Collection())->setArray($array);
+    return (new Collection)->setArray($array);
 }
 
 function str($data){
-    return (new Str())->set($data);
+    return resolve(Str::class)->set($data);
 }
 
 function request(){

@@ -146,7 +146,11 @@ class Router{
      * 
      */
     public function dispatch(){
-        return $this->getCurrentRoute()->run($this);
+        $currentAction = $this->getCurrentRoute();
+
+        emit(config("events")->getApplicationMount(), $currentAction);
+
+        return $currentAction->run($this);
     }
     
 }

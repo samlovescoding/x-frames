@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Events\MountEvent;
 use App\Models\Article;
 
 class ArticleController{
@@ -30,6 +31,10 @@ class ArticleController{
 
     public function index(){
         //(new Article)->all()
+        
+        
+        resolve("CustomString");
+
         $articles = [];
         $title = "Keemstar";
         view("articles/index", compact("articles", "title"));

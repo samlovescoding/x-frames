@@ -33,6 +33,17 @@ class System{
 
         /*
          *
+         * Component Namespace
+         * 
+         * It defines the namespace used for controllers. It
+         * is required by the router to prefix all routes.
+         * Please note the trailling backslashes.
+         * 
+         */
+        "componentNamespace" => "App\\Components\\",
+
+        /*
+         *
          * Views Folder
          * 
          * It defines the default folder of views.
