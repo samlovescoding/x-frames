@@ -59,6 +59,6 @@ class Database{
          * connected to the database server.
          * 
          */
-        "database" => "samlovescoding"
+        "database" => "test"
     ];
 }

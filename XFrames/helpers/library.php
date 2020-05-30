@@ -1,6 +1,6 @@
 <?php
 
-use XFrames\Blueprints\Event;
+use XFrames\Library\Authentication;
 use XFrames\Library\Configuration;
 use XFrames\Library\Emitter;
 use XFrames\Library\View;
@@ -42,4 +42,8 @@ function emit($event, $data = null){
         $event = resolve($event);
     }
     return resolve(Emitter::class)->emit($event, $data);
+}
+
+function auth(){
+    return resolve(Authentication::class);
 }

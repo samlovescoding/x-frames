@@ -3,13 +3,13 @@
 namespace App\Listeners;
 
 use XFrames\Blueprints\Listener;
-use XFrames\Utility\Str;
+use XFrames\Utility\Session;
 
 class BindingsListener implements Listener{
 
     public function handle($event){
 
-        bind("CustomString", Str::class);
+        singleton(Session::class);
 
     }
 

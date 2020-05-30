@@ -19,6 +19,12 @@ class Session{
         $_SESSION[$key] = $value;
         return $this;
     }
+    public function delete($key){
+        if($this->has($key)){
+            unset($_SESSION[$key]);
+        }
+        return $this;
+    }
     public function get($key){
         return $_SESSION[$key];
     }

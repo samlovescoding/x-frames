@@ -60,6 +60,10 @@ class Model implements RouteParameter{
         return $this->map($item);
     }
 
+    public function fetch(){
+        return $this->all();
+    }
+
     protected function map($item){
         $this->isLoaded = true;
         foreach ($item as $key => $value) {
@@ -105,6 +109,14 @@ class Model implements RouteParameter{
     public function getRouteObject($routeParameter){
         $className = get_class($this);
         return (new $className)->find($routeParameter);
+    }
+
+    public function getPolicy(){
+        $policyMap = config("policies")->getMap();
+        if(in_array(get_class($this), array_keys($policyMap))){
+            return resolve($policyMap[get_class($this)]);
+        }
+        return null;
     }
 
 }
