@@ -18,7 +18,7 @@ class Model implements RouteParameter{
 
     public function create($data){
         $this->queryBuilder->insert($this->getTableName(), $data);
-        return $this;
+        return $this->map($data);
     }
 
     public function update($data, $where = []){
@@ -31,7 +31,7 @@ class Model implements RouteParameter{
         }
         
         $this->queryBuilder->set($data)->where($where)->update($this->getTableName());
-        return $this;
+        return $this->map($data);
     }
 
     public function delete($where = []){
@@ -77,7 +77,7 @@ class Model implements RouteParameter{
         return $modelCollection;
     }
 
-    public function getTableName(){
+    protected function getTableName(){
         if($this->table == null){
             return $this->guessTableName();
         }else{
@@ -85,12 +85,12 @@ class Model implements RouteParameter{
         }
     }
 
-    public function guessTableName(){
+    protected function guessTableName(){
         $reflect = new \ReflectionClass($this);
         return str($reflect->getShortName())->lower()->snakeCase()->get();
     }
 
-    public function getIndexColumn(){
+    protected function getIndexColumn(){
         return $this->index;
     }
 
