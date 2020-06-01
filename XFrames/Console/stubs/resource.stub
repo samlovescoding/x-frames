@@ -1,0 +1,68 @@
+<?php
+
+namespace App\Controllers;
+
+use App\Models\{model};
+
+class {controller}{
+
+    public function request(){
+
+        return request()->validate([
+            
+            // Enter your request validation rules here
+
+        ]);
+
+    }
+
+    public function index(){
+
+        ${model.var} = new {model};
+
+        view("{model.short}.index", compact("{model.var}"));
+
+    }
+
+    public function view({model} ${model.var}){
+
+        view("{model.short}.view", compact("{model.var}"));
+
+    }
+
+    public function create(){
+
+        view("{model.short}.create");
+
+    }
+
+    public function store(){
+
+        (new {model})->create($this->request());
+
+        redirect("/");
+
+    }
+
+    public function edit({model} ${model.var}){
+
+        view("{model.short}.edit", compact("{model.var}"));
+    }
+
+    public function update({model} ${model.var}){
+
+        ${model.var}->update($this->request());
+
+        redirect("/");
+
+    }
+
+    public function delete({model} ${model.var}){
+
+        ${model.var}->delete();
+
+        redirect("/");
+
+    }
+
+}

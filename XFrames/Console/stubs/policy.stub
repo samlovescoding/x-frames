@@ -1,0 +1,34 @@
+<?php
+
+namespace App\Policies;
+
+use App\Models\{model};
+use App\Models\User;
+
+class {model}Policy{
+
+    public function create({model} ${model.var}, User $user){
+        
+        //
+        
+    }
+
+    public function edit({model} ${model.var}, User $user){
+
+        //
+
+    }
+
+    public function view({model} ${model.var}, User $user){
+
+        //
+
+    }
+
+    public function delete({model} ${model.var}, User $user){
+
+        //
+
+    }
+
+}

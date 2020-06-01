@@ -1,0 +1,9 @@
+<?php
+
+namespace App\Controllers;
+
+use XFrames\Database\Model;
+
+class {model} extends Model{
+
+}

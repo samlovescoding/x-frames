@@ -1,0 +1,13 @@
+<?php
+
+namespace App\Listeners;
+
+use XFrames\Blueprints\Listener;
+
+class {listener} implements Listener{
+
+    public function handle($event){
+
+    }
+
+}

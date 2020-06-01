@@ -39,7 +39,7 @@ class Database{
          * database server.
          * 
          */
-        "username" => "sam",
+        "username" => "root",
         
         /*
          *
@@ -49,7 +49,7 @@ class Database{
          * the username with database server.
          * 
          */
-        "password" => "sam",
+        "password" => "",
 
         /*
          *

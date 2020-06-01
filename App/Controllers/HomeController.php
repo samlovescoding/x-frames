@@ -2,25 +2,30 @@
 
 namespace App\Controllers;
 
-use App\Models\User;
 use XFrames\Library\Authentication;
 
 class HomeController{
 
-    public function guest(){
-        echo "You are in guest mode.";
+    public function welcome(){
+
+        view("welcome");
+
     }
 
     public function dashboard(){
-        Authentication::require();
-        echo "You are in dashboard mode.";
-    }
 
-    public function unauthorized(){
-        echo "403 - You dont have permissions to view this file.";
+        Authentication::require();
+
+        echo "You are in dashboard mode.";
+
+        echo "You are logged in as " . auth()->user()->name;
+
     }
 
     public function error(){
+
         echo "404 - File does not exist.";
+
     }
+
 }

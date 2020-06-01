@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Events;
+
+use XFrames\Blueprints\Event;
+
+class {event} implements Event{
+
+    public function emit($data = null){
+
+        $this->data = $data;
+        
+    }
+
+}
