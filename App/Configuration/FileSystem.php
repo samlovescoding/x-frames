@@ -23,7 +23,13 @@ class FileSystem{
 
         "storage" => [
 
-            "images" => "Files/images/"
+            "uploads" => "public_html/uploads/",
+
+            "session" => "Files/session/",
+
+            "cache" => "Files/cache/",
+
+            "temporary" => "Files/temp/"
 
         ]
 

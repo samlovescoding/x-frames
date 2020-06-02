@@ -64,6 +64,14 @@ class Folder{
 
     }
 
+    public function file($file){
+
+        $file = File::load($file);
+
+        return $this->add($file);
+
+    }
+
     public function files($includeFolders = false){
 
         $files = [];
@@ -88,6 +96,18 @@ class Folder{
 
         return $files;
 
+    }
+
+    public function getPath(){
+
+        return $this->path;
+
+    }
+
+    public function getRealPath(){
+
+        return $this->realPath;
+        
     }
 
     public function add(File $file){

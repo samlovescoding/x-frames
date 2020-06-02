@@ -14,6 +14,8 @@ class File{
 
     protected $path;
 
+    protected $created = false;
+
     static public function create(string $name, string $data = "", bool $commit = true){
 
         $file = new File;
@@ -23,6 +25,8 @@ class File{
         $file->data = $data;
 
         $file->commit = $commit;
+
+        $file->created = true;
 
         return $file;
 
@@ -55,6 +59,16 @@ class File{
         $file = $folder->add($this);
 
         $file->save();
+
+        return $file;
+
+    }
+
+    public function renameTo(Folder $folder){
+
+        $file = $folder->add($this);
+
+        $file->rename($file->name);
 
         return $file;
 
@@ -118,8 +132,6 @@ class File{
 
         $realFilePath = $file->getFilePath();
 
-        $file->data = file_get_contents($realFilePath);
-
         return $file;
 
     }
@@ -157,13 +169,52 @@ class File{
 
         $folder = Storage::folder($storage);
 
-        return $this->saveto($folder);
+        if($this->created){
+
+            return $this->saveto($folder);
+
+        }
+
+        rename($this->getFilePath(), $folder->realPath . $this->name);
+
+        $this->path($folder->path);
+
+        return $this;
+
 
     }
 
     public function size(){
 
         return filesize($this->getFilePath());
+
+    }
+
+    public function copy($name){
+
+        $originalFilePath = $this->getFilePath();
+
+        $this->name = $name;
+
+        $newFilePath = $this->getFilePath();
+
+        copy($originalFilePath, $newFilePath);
+
+        return $this;
+
+    }
+
+    public function rename($name){
+
+        $originalFilePath = $this->getFilePath();
+
+        $this->name = $name;
+
+        $newFilePath = $this->getFilePath();
+
+        rename($originalFilePath, $newFilePath);
+
+        return $this;
 
     }
 

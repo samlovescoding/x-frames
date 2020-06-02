@@ -15,5 +15,3 @@ Route::get("/login", "Authentication\\LoginController@form");
 Route::post("/login", "Authentication\\LoginController@handle");
 Route::get("/register", "Authentication\\RegisterController@form");
 Route::post("/register", "Authentication\\RegisterController@handle");
-
-Route::get("/test/:file", "TestController@test");
