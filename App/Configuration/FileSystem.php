@@ -31,7 +31,13 @@ class FileSystem{
          * dependent on your application needs.
          * 
          */
-        "storagePath" => "public_html/storage/"
+        "storagePath" => "public_html/storage/",
+
+        "systems" => [
+
+            "st"
+
+        ]
 
     ];
 }
