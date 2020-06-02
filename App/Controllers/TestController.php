@@ -4,12 +4,15 @@ namespace App\Controllers;
 
 use XFrames\FileSystem\File;
 use XFrames\FileSystem\Folder;
+use XFrames\FileSystem\Storage;
 
 class TestController{
 
     public function test($file){
 
-        $yoyo = Folder::create("YoYo");
+        $file = File::create("hello.txt", "Content");
+
+        $file->store("images");
 
     }
 

@@ -21,21 +21,9 @@ class FileSystem{
          */
         "publicPath" => "public_html/",
 
-        /*
-         *
-         * Storage Path
-         * 
-         * It defines the path that is used when working with
-         * file uploads and handling other file related
-         * tasks. It should be publicly accessible as
-         * dependent on your application needs.
-         * 
-         */
-        "storagePath" => "public_html/storage/",
+        "storage" => [
 
-        "systems" => [
-
-            "st"
+            "images" => "Files/images/"
 
         ]
 

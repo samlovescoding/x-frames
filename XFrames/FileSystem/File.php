@@ -50,6 +50,16 @@ class File{
 
     }
 
+    public function saveTo(Folder $folder){
+
+        $file = $folder->add($this);
+
+        $file->save();
+
+        return $file;
+
+    }
+
     public function commit(){
 
         if($this->commit){
@@ -145,14 +155,16 @@ class File{
 
     public function store($storage){
 
-        //
+        $folder = Storage::folder($storage);
+
+        return $this->saveto($folder);
 
     }
 
     public function size(){
 
         return filesize($this->getFilePath());
-        
+
     }
 
     public function getFilePath($appends = ""){
