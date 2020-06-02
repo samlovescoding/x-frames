@@ -1,0 +1,5 @@
+node_modules
+vendor
+public_html/adminer.php
+package-lock.json
+composer-lock.json

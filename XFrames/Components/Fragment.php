@@ -3,7 +3,6 @@
 namespace XFrames\Components;
 
 use XFrames\Library\Component;
-use XFrames\Utility\Collection;
 
 class Fragment extends Component{
     public $components;
