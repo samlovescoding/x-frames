@@ -12,7 +12,7 @@ Ever wanted to use Laravel without the expensive footprint. X Framework is a hea
 
 ## Learning X Framework
 
-Although X Framework is small compared to its competitors, X Framework has a very extensive API. The [documentation](http://samlovescoding.com/x) is the best place to get starts. Although, if you dont feel like read, you can always binge watch the following tutorials. To have your own tutorial listed here, email me [himself@samlovescoding.com](mailto://himself@samlovescoding.com). Current tutorials:
+Although X Framework is small compared to its competitors, X Framework has a very extensive API. The [documentation](http://samlovescoding.com/x) is the best place to get started. Although, if you dont feel like reading, you can always binge watch the following tutorials. To have your own tutorial listed here, email me [himself@samlovescoding.com](mailto://himself@samlovescoding.com). Here are some tutorials:
 
 - There are no tutorials available.
 
