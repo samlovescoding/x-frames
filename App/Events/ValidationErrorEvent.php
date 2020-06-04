@@ -8,7 +8,16 @@ class ValidationErrorEvent implements Event{
 
     public function emit($validationError){
 
-        session()->set("error", $validationError);
+        if(! session()->has("validationError")){
+
+            session()->set("validationError", []);
+
+        }
+
+        session()->set("validationError", array_merge(
+            session()->get("validationError"),
+            [ $validationError ]
+        ));
         
     }
 

@@ -1,4 +1,4 @@
 require("./bootstrap.js");
 
-console.log("This is Working. Yes Really!");
+console.log("X-Framework says Hi!");
 

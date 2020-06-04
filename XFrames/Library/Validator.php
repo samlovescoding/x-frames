@@ -16,9 +16,13 @@ class Validator{
         
         $this->hasAttribute("rules");
 
+        $this->hasAttribute("failed");
+
         $this->setRequest($request);
 
         $this->setRules($rules);
+
+        $this->setFailed(false);
 
     }
 
@@ -38,35 +42,59 @@ class Validator{
 
                 $validatedData[$key] = $request->{ $key };
 
-                $inputRules = str($rules[ $key ])->split("|");
+                $inputValidations = [];
 
-                $inputValidations = $inputRules->flatMap(function($index, $rule) use ($validationRules, $key, $request) {
+                if(is_string($rules[ $key ])){
+
+                    $inputRules = str($rules[ $key ])->split("|");
+
+                    $stringInputValidations = $inputRules->flatMap(function($index, $rule) use ($validationRules, $key, $request) {
+                        
+                        $functionData = explode(":", $rule);
+
+                        $function = $functionData[0];
+
+                        $value = $request->get($key);
+
+                        $functionParams = [ $key , $value ];
+
+                        if(count($functionData) == 2){
+
+                            $functionParams = array_merge( $functionParams, explode(",", $functionData[1]));
+
+                        }
+
+                        return [$rule => call_user_func_array([$validationRules, $function], $functionParams)];
+
+                    })->toArray();
+
+                    $inputValidations = array_merge($inputValidations, $stringInputValidations);
+
+                }
+
+                if(is_callable($rules[ $key ])){
+
+                    $inputValidations = array_merge($inputValidations, [
+
+                        "validate" => $rules[ $key ]($request->{ $key })
+
+                    ]);
+
+                }
+
+                foreach ($inputValidations as $rule => $didPass) {
                     
-                    $functionData = explode(":", $rule);
+                    if( $didPass !== true ){
 
-                    $function = $functionData[0];
+                        unset($validatedData[ $key ]);
 
-                    $value = $request->get($key);
+                        $this->fail($key, $request->{ $key }, $didPass);
 
-                    $functionParams = [ $key , $value ];
-
-                    if(count($functionData) == 2){
-
-                        $functionParams = array_merge( $functionParams, explode(",", $functionData[1]));
+                        $this->setFailed(true);
 
                     }
 
-                    return [$rule => call_user_func_array([$validationRules, $function], $functionParams)];
-
-                })->toArray();
-
-                dd($inputValidations);
-
-
-
-            } else {
-
-                //check is_required
+                }
 
             }
 
@@ -90,6 +118,12 @@ class Validator{
             config("events")->getValidationError(), 
             $validationError
         );
+
+    }
+
+    public function failed(){
+
+        return $this->getFailed();
 
     }
 

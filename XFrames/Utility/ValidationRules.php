@@ -36,7 +36,7 @@ class ValidationRules{
 
         }
 
-        return false;
+        return "$key should be atleast $min characters.";
 
     }
 
@@ -48,16 +48,16 @@ class ValidationRules{
 
         }
 
-        return false;
+        return "$key should be utmost $max characters.";
 
     }
 
     public function is_min_max($key, $value, $min, $max){
 
         if(
-            $this->is_min($key, $value, $min)
+            $this->is_min($key, $value, $min) == true
             &&
-            $this->is_max($key, $value, $max)
+            $this->is_max($key, $value, $max) == true
         ){
 
             return true;

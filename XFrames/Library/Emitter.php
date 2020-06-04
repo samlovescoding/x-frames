@@ -2,8 +2,6 @@
 
 namespace XFrames\Library;
 
-use XFrames\Blueprints\Event;
-
 class Emitter{
 
     public function emit($event, $data){
@@ -13,12 +11,17 @@ class Emitter{
         $eventMap = config("events")->getMap();
         
         if(in_array(get_class($event), array_keys($eventMap))){
+
             $listeners = $eventMap[get_class($event)];
             
             foreach ($listeners as $listener) {
+
                 resolve($listener)->handle($event);
+
             }
+
         }
+
     }
 
 }

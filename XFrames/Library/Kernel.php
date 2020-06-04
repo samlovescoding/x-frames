@@ -14,6 +14,7 @@ namespace XFrames\Library;
 class Kernel{
 
     protected $router;
+
     protected $configuration;
 
     public function __construct($configurationRoot, $configurationNamespace) {
@@ -25,18 +26,26 @@ class Kernel{
         $this->configuration = resolve(Configuration::class);
 
         $this->configuration->setKernel();
+
         $this->configuration->setNamespace($configurationNamespace);
+
         $this->configuration->mapConfig($configurationMap);
+
     }
 
     public function loadConfigurationMap($configurationRoot){
         $map = [];
 
         foreach (glob($configurationRoot . "*.php") as $configurationFile) {
+
             $configurationClass = substr($configurationFile, strlen($configurationRoot));
+
             $configurationClass = substr($configurationClass, 0, strlen($configurationClass) - 4);
+
             $configurationClass = lcfirst($configurationClass);
+
             $map[$configurationClass] = $configurationFile;
+
         }
 
         return $map;
@@ -44,12 +53,19 @@ class Kernel{
     }
 
     public function boot($routesFile){
+
         // Startup Boot Definitions. Pre-Request State
+
         require $routesFile;
+    
         $this->router = new Router(false);
+
     }
 
     public function render(){
+
         $this->router->dispatch();
+
     }
+
 }

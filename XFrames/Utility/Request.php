@@ -10,9 +10,11 @@ class Request{
 
     use Mapper;
 
-    public function __construct() { 
+    public function __construct(Validator $validator) { 
 
         $this->memberMapsTo($_REQUEST);
+
+        $this->validator = $validator;
 
     }
 
@@ -58,7 +60,24 @@ class Request{
 
     public function validate($rules) {
 
-        return (new Validator($this, $rules))->validate();
+        $this->validator->setRequest($this);
         
+        $this->validator->setRules($rules);
+
+        return $this->validator->validate();
+
     }
+
+    public function failed(){
+
+        return $this->validator->failed();
+
+    }
+
+    public function passed(){
+
+        return !$this->validator->failed();
+
+    }
+
 }
