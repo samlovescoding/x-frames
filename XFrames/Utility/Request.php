@@ -2,17 +2,21 @@
 
 namespace XFrames\Utility;
 
+use XFrames\Blueprints\Mapper;
 use XFrames\FileSystem\UploadedFile;
+use XFrames\Library\Validator;
 
 class Request{
-    public function __construct() {
-        $request = $_REQUEST;
-        foreach ($request as $key => $value) {
-            $this->{$key} = $value;
-        }
+
+    use Mapper;
+
+    public function __construct() { 
+
+        $this->memberMapsTo($_REQUEST);
+
     }
 
-    public function only(){
+    public function only() {
 
         $requiredKeys = func_get_args();
 
@@ -28,19 +32,33 @@ class Request{
 
     }
 
-    public function array(){
+    public function has($key) {
+
+        return isset($_REQUEST[$key]);
+
+    }
+
+    public function get($key){
+
+        return $_REQUEST[$key];
+
+    }
+
+    public function array() {
 
         return $_REQUEST;
 
     }
 
-    public function file($key){
+    public function file($key) {
 
         return new UploadedFile($key);
         
     }
 
-    public function validate($rules){
-        return (new Validator($_REQUEST, $rules))->validatedRequest();
+    public function validate($rules) {
+
+        return (new Validator($this, $rules))->validate();
+        
     }
 }

@@ -34,5 +34,16 @@ class Events{
          */
         "applicationMount" => \App\Events\MountEvent::class,
 
+
+        /*
+         * 
+         * Validation Error Event
+         * 
+         * This event gets fired when an input fails to be
+         * validated
+         * 
+         */
+        "validationError" => \App\Events\ValidationErrorEvent::class,
+
     ];
 }

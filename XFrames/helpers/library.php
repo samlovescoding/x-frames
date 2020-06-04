@@ -12,8 +12,6 @@ function config($className = null){
     return resolve(Configuration::class)->{$className}();
 }
 
-singleton(View::class);
-
 function component($component){
     return resolve(config("system")->getComponentNamespace() . $component);
 }
