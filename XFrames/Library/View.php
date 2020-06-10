@@ -53,7 +53,7 @@ class View implements Renderable{
     }
     
     public function render() {
-        
+
         $this->getContent();
 
         if($this->layout != null){

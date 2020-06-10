@@ -2,6 +2,8 @@
 
 namespace XFrames\Library;
 
+use XFrames\Blueprints\Renderable;
+
 /*
  *
  * Kernel
@@ -64,7 +66,13 @@ class Kernel{
 
     public function render(){
 
-        $this->router->dispatch();
+        $renderable = $this->router->dispatch();
+
+        if($renderable instanceof Renderable){
+
+            $renderable->render();
+            
+        }
 
     }
 

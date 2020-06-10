@@ -6,7 +6,7 @@
 /*!********************************!*\
   !*** ./App/JavaScript/main.js ***!
   \********************************/
-/*! no static exports found */function(module,exports,__webpack_require__){eval('__webpack_require__(/*! ./bootstrap.js */ "./App/JavaScript/bootstrap.js");\r\n\r\nconsole.log("This is Working. Yes Really!");\r\n\r\n\n\n//# sourceURL=webpack:///./App/JavaScript/main.js?')},"./App/Styles/main.scss":
+/*! no static exports found */function(module,exports,__webpack_require__){eval('__webpack_require__(/*! ./bootstrap.js */ "./App/JavaScript/bootstrap.js");\r\n\r\nconsole.log("X-Framework says Hi!");\r\n\r\n\n\n//# sourceURL=webpack:///./App/JavaScript/main.js?')},"./App/Styles/main.scss":
 /*!******************************!*\
   !*** ./App/Styles/main.scss ***!
   \******************************/

@@ -35,7 +35,7 @@ class LoginController{
 
     public function form(){
 
-        view("authentication/login");
+        return view("authentication/login");
 
     }
 }

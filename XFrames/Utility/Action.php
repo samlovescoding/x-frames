@@ -165,7 +165,7 @@ class Action extends Runnable{
 
         $dependencies = $this->buildDependencies($reflection);
 
-        call_user_func_array($this->getCallable(), $dependencies);
+        return call_user_func_array($this->getCallable(), $dependencies);
 
     }
 

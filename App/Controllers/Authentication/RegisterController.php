@@ -42,7 +42,7 @@ class RegisterController{
 
     public function form(){
 
-        view("authentication/register", [
+        return view("authentication/register", [
 
             "title" => "Registeration"
 

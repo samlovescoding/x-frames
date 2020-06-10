@@ -5,6 +5,8 @@ use XFrames\Library\Configuration;
 use XFrames\Library\Emitter;
 use XFrames\Library\View;
 
+singleton(View::class);
+
 function config($className = null){
 
     if($className == null){
@@ -27,8 +29,7 @@ function view($file, $parameters = []){
 
     return resolve(View::class)
             ->setFile($file)
-            ->setParameters($parameters)
-            ->render();
+            ->setParameters($parameters);
 
 }
 
@@ -40,7 +41,7 @@ function import($file){
 
 function layout($file){
 
-    resolve(View::class)->setLayout($file);
+    $view = resolve(View::class)->setLayout($file);
 
 }
 

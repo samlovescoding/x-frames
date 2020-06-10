@@ -8,9 +8,7 @@ class HomeController{
 
     public function welcome(){
 
-        dd(memory_get_usage());
-
-        view("welcome");
+        return view("welcome");
 
     }
 
