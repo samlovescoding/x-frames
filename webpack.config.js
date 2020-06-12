@@ -26,6 +26,17 @@ module.exports = {
           'css-loader'
         ] 
       },
+      {
+        test: /\.(woff|woff2|ttf|otf)$/,
+        loader: 'file-loader',
+        include: [/fonts/],
+
+        options: {
+          name: '[name].[ext]',
+          outputPath: 'fonts/',
+          publicPath: url => '/fonts/' + url
+        }
+      },
     ]
   },
   optimization:{

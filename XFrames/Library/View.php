@@ -40,7 +40,15 @@ class View implements Renderable{
 
     public function __toString() {
 
-        return $this->render();
+        ob_start();
+
+        $this->render();
+
+        $content = ob_get_contents();
+
+        ob_end_clean();
+
+        return $content;
         
     }
 
@@ -77,7 +85,7 @@ class View implements Renderable{
 
         }
 
-        require $_SERVER["DOCUMENT_ROOT"] . "/../" . config("system")->getViewsFolder() . $this->layout . ".php";
+        require $this->getRoot() . $this->layout . ".php";
 
         return $this;
 
@@ -99,7 +107,7 @@ class View implements Renderable{
 
         ob_start();
 
-        require $_SERVER["DOCUMENT_ROOT"] . "/../" . config("system")->getViewsFolder() . $this->file . ".php";
+        require $this->getRoot() . $this->file . ".php";
         
         $this->content = ob_get_contents();
         
@@ -109,15 +117,21 @@ class View implements Renderable{
 
     }
 
-    public function import($view) {
+    public function import($view, $data = []) {
 
-        foreach ($this->parameters as $key => $value) {
+        foreach (array_merge($this->parameters, $data) as $key => $value) {
 
             ${$key} = $value;
 
         }
 
-        require $_SERVER["DOCUMENT_ROOT"] . "/../" . config("system")->getViewsFolder() . $view . ".php";
+        require $this->getRoot() . $view . ".php";
+
+    }
+
+    public function getRoot(){
+
+        return $_SERVER["DOCUMENT_ROOT"] . "/../" . config("system")->getViewsFolder();
 
     }
 

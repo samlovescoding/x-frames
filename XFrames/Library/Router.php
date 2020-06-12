@@ -8,7 +8,7 @@ class Router{
 
     public $routeParameters;
 
-    public function __construct(bool $dispatch = true) {
+    public function __construct($dispatch = true) {
 
         $this->currentRouteURI = $this->getCurrentRouteURI();
 

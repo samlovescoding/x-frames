@@ -1,22 +1,23 @@
 |----------------------------------------------------------------------------------------------------------------------|
 |   Scheduled       |         Released        |       Feature Name                                                     |
 |----------------------------------------------------------------------------------------------------------------------|
-|   0.9.3           |         x.x.xx          |       View Import Parameters                                           |
-|   0.9.3           |         x.x.xx          |       Webpack with font loader                                         |
-|   0.9.4           |         x.x.xx          |       Eloquent Relations                                               |
-|   0.9.4           |         x.x.xx          |       LEARN ABOUT PIVOT Tables                                         |
-|   0.9.5           |         x.x.xx          |       Middleware                                                       |
-|   0.9.5           |         x.x.xx          |       Middleware --> Authentication Middleware                         |
-|   0.9.6           |         x.x.xx          |       Session Decay Data                                               |
-|   0.9.7           |         x.x.xx          |       Middleware --> Throttler Middleware                              |
-|   0.9.8           |         x.x.xx          |       Remove all the component stuff                                   |
-|   0.9.9           |         x.x.xx          |       Unit Testing with PHPUnit                                        |
-|   1.0.0           |         x.x.xx          |       Release                                                          |
-|   1.0.1           |         x.x.xx          |       Components                                                       |
-|   1.0.1           |         x.x.xx          |       Component Props                                                  |
-|   1.0.1           |         x.x.xx          |       Component State                                                  |
-|   1.0.1           |         x.x.xx          |       Sample Components -> Fragment, Divs, Inputs, InputGroups         |
-|   1.0.2           |         x.x.xx          |       Live Components                                                  |
+|   0.9.3           |         0.9.3           |       View Import Parameters                                           |
+|   0.9.3           |         0.9.3           |       Webpack with font loader                                         |
+|   0.9.4           |         x.x.x           |       Eloquent Relations                                               |
+|   0.9.4           |         x.x.x           |       LEARN ABOUT PIVOT Tables                                         |
+|   0.9.5           |         x.x.x           |       Middleware                                                       |
+|   0.9.5           |         x.x.x           |       Middleware --> Authentication Middleware                         |
+|   0.9.6           |         x.x.x           |       Cache                                                            |
+|   0.9.6           |         x.x.x           |       Session Decay Data                                               |
+|   0.9.7           |         x.x.x           |       Middleware --> Throttler Middleware                              |
+|   0.9.8           |         x.x.x           |       Remove all the component stuff                                   |
+|   0.9.9           |         x.x.x           |       Unit Testing with PHPUnit                                        |
+|   1.0.0           |         x.x.x           |       Release                                                          |
+|   1.0.1           |         x.x.x           |       Components                                                       |
+|   1.0.1           |         x.x.x           |       Component Props                                                  |
+|   1.0.1           |         x.x.x           |       Component State                                                  |
+|   1.0.1           |         x.x.x           |       Sample Components -> Fragment, Divs, Inputs, InputGroups         |
+|   1.0.2           |         x.x.x           |       Live Components                                                  |
 |----------------------------------------------------------------------------------------------------------------------|
 |   x.x.xx          |         x.x.xx          |       Unscheduled Feature Name                                         |
 |----------------------------------------------------------------------------------------------------------------------|
