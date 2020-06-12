@@ -68,9 +68,9 @@ class Session{
     public function delete($key){
         
         if($this->has($key)){
-            
+
             unset($_SESSION[$key]);
-        
+
         }
 
         return $this->map();

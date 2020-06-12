@@ -1,4 +1,26 @@
-View Import Parameters
-Webpack with font loader
-Eloquent Relations
-LEARN ABOUT PIVOT Tables
+|----------------------------------------------------------------------------------------------------------------------|
+|   Scheduled       |         Released        |       Feature Name                                                     |
+|----------------------------------------------------------------------------------------------------------------------|
+|   0.9.3           |         x.x.xx          |       View Import Parameters                                           |
+|   0.9.3           |         x.x.xx          |       Webpack with font loader                                         |
+|   0.9.4           |         x.x.xx          |       Eloquent Relations                                               |
+|   0.9.4           |         x.x.xx          |       LEARN ABOUT PIVOT Tables                                         |
+|   0.9.5           |         x.x.xx          |       Middleware                                                       |
+|   0.9.5           |         x.x.xx          |       Middleware --> Authentication Middleware                         |
+|   0.9.6           |         x.x.xx          |       Session Decay Data                                               |
+|   0.9.7           |         x.x.xx          |       Middleware --> Throttler Middleware                              |
+|   0.9.8           |         x.x.xx          |       Remove all the component stuff                                   |
+|   0.9.9           |         x.x.xx          |       Unit Testing with PHPUnit                                        |
+|   1.0.0           |         x.x.xx          |       Release                                                          |
+|   1.0.1           |         x.x.xx          |       Components                                                       |
+|   1.0.1           |         x.x.xx          |       Component Props                                                  |
+|   1.0.1           |         x.x.xx          |       Component State                                                  |
+|   1.0.1           |         x.x.xx          |       Sample Components -> Fragment, Divs, Inputs, InputGroups         |
+|   1.0.2           |         x.x.xx          |       Live Components                                                  |
+|----------------------------------------------------------------------------------------------------------------------|
+|   x.x.xx          |         x.x.xx          |       Unscheduled Feature Name                                         |
+|----------------------------------------------------------------------------------------------------------------------|
+|   1.x.xx          |         x.x.xx          |       Cache                                                            |
+|   x.x.xx          |         x.x.xx          |       Refactor to Blueprint Mappers                                    |
+|   x.x.xx          |         x.x.xx          |       Better Database Driver                                           |
+|----------------------------------------------------------------------------------------------------------------------|
