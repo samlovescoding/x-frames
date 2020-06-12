@@ -8,6 +8,8 @@ class Session{
 
         $this->boot();
 
+        $this->map();
+
     }
 
     public function map(){
@@ -30,6 +32,22 @@ class Session{
     static function reset(){
 
         session_destroy();
+
+    }
+
+    public function start(){
+
+        $this->boot();
+
+        return $this;
+
+    }
+
+    public function destroy(){
+
+        $this->reset();
+
+        return $this;
 
     }
 
