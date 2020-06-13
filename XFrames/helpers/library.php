@@ -19,12 +19,6 @@ function config($className = null){
 
 }
 
-function component($component){
-
-    return resolve(config("system")->getComponentNamespace() . $component);
-
-}
-
 function view($file, $parameters = []){
 
     return resolve(View::class)

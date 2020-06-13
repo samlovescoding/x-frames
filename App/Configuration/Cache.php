@@ -3,6 +3,7 @@
 namespace App\Configuration;
 
 use XFrames\Blueprints\ConfigurationMapper;
+use XFrames\Cache\FileDriver;
 
 class Cache{
 
@@ -19,16 +20,16 @@ class Cache{
          * files and default.
          * 
          */
-        "driver" => "default",
+        "driver" => FileDriver::class,
 
         /*
          *
-         * Save Directory
+         * Time To Live
          * 
-         * It defines the directory under which all cache is 
-         * saved.Please note the trailing slash.
+         * It defines the default time to live for a cache key
+         * in seconds.
          * 
          */
-        "directory" => "cache/",
+        "timeToLive" => 2 * 60,
     ];
 }

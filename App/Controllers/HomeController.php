@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use XFrames\Cache\Cache;
 use XFrames\Library\Authentication;
 
 class HomeController{

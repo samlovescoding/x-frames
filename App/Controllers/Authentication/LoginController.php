@@ -5,9 +5,11 @@ namespace App\Controllers\Authentication;
 use App\Models\User;
 use XFrames\Library\Authentication;
 
-class LoginController{
+class LoginController
+{
 
-    public function handle(){
+    public function handle()
+    {
 
         $user = new User;
 
@@ -19,13 +21,13 @@ class LoginController{
 
         );
 
-        if($userAttempt != false){
+        if ($userAttempt != false) {
 
             Authentication::remember($userAttempt);
 
             redirect("/dashboard");
 
-        }else{
+        } else {
 
             redirect("/login");
 
@@ -33,7 +35,8 @@ class LoginController{
 
     }
 
-    public function form(){
+    public function form()
+    {
 
         return view("authentication/login");
 

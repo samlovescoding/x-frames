@@ -22,7 +22,7 @@ class Route{
 
             $_ROUTES = [];
 
-            $methods = ["get", "post", "put", "patch", "delete", "options"];
+            $methods = ["get", "post", "put", "patch", "delete", "options", "state", "component"];
 
             foreach ($methods as $supportedMethod) {
 

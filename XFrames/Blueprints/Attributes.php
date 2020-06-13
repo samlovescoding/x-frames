@@ -8,7 +8,7 @@ trait Attributes{
 
     protected $attributes;
 
-    public function hasAttribute($attributeName){
+    public function hasAttribute($attributeName, $default = null){
 
         if(!isset($this->attributes)){
 
@@ -16,7 +16,7 @@ trait Attributes{
 
         }
 
-        $this->attributes[$attributeName] = null;
+        $this->attributes[$attributeName] = $default;
 
     }
 

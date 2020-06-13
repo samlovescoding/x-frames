@@ -1,17 +1,13 @@
 |----------------------------------------------------------------------------------------------------------------------|
 |   Scheduled       |         Released        |       Feature Name                                                     |
 |----------------------------------------------------------------------------------------------------------------------|
-|   0.9.3           |         0.9.3           |       View Import Parameters                                           |
-|   0.9.3           |         0.9.3           |       Webpack with font loader                                         |
-|   0.9.4           |         x.x.x           |       Eloquent Relations                                               |
-|   0.9.4           |         x.x.x           |       LEARN ABOUT PIVOT Tables                                         |
 |   0.9.5           |         x.x.x           |       Middleware                                                       |
 |   0.9.5           |         x.x.x           |       Middleware --> Authentication Middleware                         |
-|   0.9.6           |         x.x.x           |       Cache                                                            |
 |   0.9.6           |         x.x.x           |       Session Decay Data                                               |
 |   0.9.7           |         x.x.x           |       Middleware --> Throttler Middleware                              |
-|   0.9.8           |         x.x.x           |       Remove all the component stuff                                   |
+|   0.9.8           |         x.x.x           |       Chained Eager Loading Models using WHERE id IN () & Pre loaded   |
 |   0.9.9           |         x.x.x           |       Unit Testing with PHPUnit                                        |
+|   0.9.10          |         x.x.x           |       Tests for XFrames                                                |
 |   1.0.0           |         x.x.x           |       Release                                                          |
 |   1.0.1           |         x.x.x           |       Components                                                       |
 |   1.0.1           |         x.x.x           |       Component Props                                                  |
@@ -19,9 +15,20 @@
 |   1.0.1           |         x.x.x           |       Sample Components -> Fragment, Divs, Inputs, InputGroups         |
 |   1.0.2           |         x.x.x           |       Live Components                                                  |
 |----------------------------------------------------------------------------------------------------------------------|
-|   x.x.xx          |         x.x.xx          |       Unscheduled Feature Name                                         |
+|   Scheduled       |         Released        |       Completed Features                                               |
+|----------------------------------------------------------------------------------------------------------------------|
+|   0.9.3           |         0.9.3           |       View Import Parameters                                           |
+|   0.9.3           |         0.9.3           |       Webpack with font loader                                         |
+|   0.9.8           |         0.9.3           |       Remove all the component stuff                                   |
+|   0.9.4           |         0.9.4           |       Eager Loading Models                                             |
+|   0.9.4           |         0.9.4           |       Model Relations                                                  |
+|   0.9.6           |         0.9.4           |       Cache                                                            |
+|----------------------------------------------------------------------------------------------------------------------|
+|   Guess Schedule  |         Released        |       Unscheduled Feature Name                                         |
 |----------------------------------------------------------------------------------------------------------------------|
 |   1.x.xx          |         x.x.xx          |       Cache                                                            |
 |   x.x.xx          |         x.x.xx          |       Refactor to Blueprint Mappers                                    |
 |   x.x.xx          |         x.x.xx          |       Better Database Driver                                           |
+|   x.x.xx          |         x.x.xx          |       Polymorphic Relations in Models                                  |
+|   0.9.4           |         x.x.x           |       Pivot Tables in Models                                           |
 |----------------------------------------------------------------------------------------------------------------------|

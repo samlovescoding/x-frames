@@ -158,7 +158,7 @@ class File{
         
     }
 
-    public function exists($filePath){
+    public function exists($filePath = ""){
 
         $realFilePath = $this->getFilePath($filePath);
         
