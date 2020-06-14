@@ -23,10 +23,4 @@ class HomeController{
 
     }
 
-    public function error(){
-
-        echo "404 - File does not exist.";
-
-    }
-
 }

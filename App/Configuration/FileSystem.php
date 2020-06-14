@@ -25,7 +25,7 @@ class FileSystem{
 
             "uploads" => "public_html/uploads/",
 
-            "session" => "Files/session/",
+            "session" => "Files/sessions/",
 
             "cache" => "Files/cache/",
 

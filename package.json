@@ -4,6 +4,7 @@
   "description": "XFramework is a framework implementation of XFrames library.",
   "private": true,
   "scripts": {
+    "start": "concurrently \"npm run watch\" \"npm run serve\"",
     "dump-autoload": "composer dump-autoload",
     "webpack": "webpack --config webpack.config.js",
     "watch": "webpack --config webpack.config.js --watch",

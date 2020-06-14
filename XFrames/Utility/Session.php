@@ -25,6 +25,12 @@ class Session{
 
     static function boot(){
 
+        $sessionStorage = storage("session");
+
+        $sesionPath = str($sessionStorage->getRealPath())->getRtrim(DIRECTORY_SEPARATOR);
+
+        ini_set('session.save_path', $sesionPath);
+
         session_start();
 
     }

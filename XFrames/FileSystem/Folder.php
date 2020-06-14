@@ -106,7 +106,7 @@ class Folder{
 
     public function getRealPath(){
 
-        return $this->realPath;
+        return str($this->realPath)->getPath();
         
     }
 

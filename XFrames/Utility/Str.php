@@ -5,6 +5,7 @@ namespace XFrames\Utility;
 use XFrames\Blueprints\DumpAndDie;
 use XFrames\Blueprints\RouteParameter;
 use XFrames\Blueprints\Stringable;
+use XFrames\Exceptions\CallToUnknown;
 
 class Str implements RouteParameter{
 
@@ -267,6 +268,64 @@ class Str implements RouteParameter{
         }
 
         return $this;
+
+    }
+
+    public function replace($from, $to){
+
+        $this->data = str_replace($from, $to, $this->data);
+
+        return $this;
+
+    }
+
+    public function path(){
+
+        $this->replace("\/", "'");
+        $this->replace("\\", "/");
+        $this->replace("/", DIRECTORY_SEPARATOR);
+
+        $parts = explode(DIRECTORY_SEPARATOR, $this->get());
+
+        $actualParts = [];
+
+        foreach ($parts as $part){
+            if($part != "..") {
+                $actualParts[] = $part;
+            }else{
+                array_pop($actualParts);
+            }
+        }
+
+        $this->set(implode(DIRECTORY_SEPARATOR, $actualParts));
+
+        return $this;
+
+    }
+
+    public function stringify(){
+
+        return $this->get();
+
+    }
+
+    public function __call($name, $arguments)
+    {
+        /// getPath()
+
+        if(strlen($name) > 3 && substr($name, 0, 3) == "get"){
+
+            $method = lcfirst(substr($name, 3));
+
+            if(method_exists($this, $method)){
+
+                return call_user_func_array([$this, $method], $arguments)->get();
+
+            }
+
+        }
+
+        throw new CallToUnknown("Trying to call unknown method '$name'.");
 
     }
 

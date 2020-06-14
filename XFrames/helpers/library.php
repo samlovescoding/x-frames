@@ -1,5 +1,6 @@
 <?php
 
+use XFrames\Cache\Cache;
 use XFrames\Library\Authentication;
 use XFrames\Library\Configuration;
 use XFrames\Library\Emitter;
@@ -66,5 +67,33 @@ function emit($event, $data = null){
 function auth(){
 
     return resolve(Authentication::class);
+
+}
+
+function cache($name, $timeout, $callback = null){
+
+    if(is_callable($timeout)){
+
+        $callback = $timeout;
+
+        $timeout = null;
+
+    }
+
+    $cache = resolve(Cache::class);
+
+    if($cache->valid($name)){
+
+        return $cache->get($name);
+
+    } else {
+
+        $value = $callback();
+
+        $cache->set($name, $value, $timeout);
+
+        return $value;
+
+    }
 
 }
