@@ -18,6 +18,10 @@ class Configuration{
 
     }
 
+    public function hasKernel(){
+        return $this->hasKernel;
+    }
+
     public function setNamespace($namespace) {
 
         $this->namespace = $namespace;

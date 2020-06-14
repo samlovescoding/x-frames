@@ -8,6 +8,8 @@ use XFrames\Library\Router;
 
 class Action extends Runnable{
 
+    protected $name;
+
     protected $className;
 
     protected $method;
@@ -16,7 +18,7 @@ class Action extends Runnable{
 
     protected $router;
 
-    public function __construct($className = null, string $method = "dd", bool $isStatic = false) {
+    public function __construct($className = null, string $method = "dd", bool $isStatic = false, string $name = null) {
 
         $this->className = $className;
 
@@ -24,6 +26,17 @@ class Action extends Runnable{
 
         $this->isStatic = $isStatic;
 
+        $this->name = $name;
+
+    }
+
+    public function name(string $name){
+        $this->name = $name;
+        return $this;
+    }
+
+    public function getName(){
+        return $this->name;
     }
 
     /*
@@ -203,7 +216,7 @@ class Action extends Runnable{
 
      static public function fromString(string $runnableString){
 
-        if(config()->hasKernel){
+        if(config()->hasKernel()){
 
             $runnableString = config("system")->getControllerNamespace() . $runnableString;
 
@@ -229,6 +242,18 @@ class Action extends Runnable{
 
         }
 
+    }
+
+    public function toString(){
+        $actionString = null;
+
+        if($this->className == null){
+            $actionString = $this->method;
+        }else{
+            $actionString = $this->className . "@" . $this->method;
+        }
+
+         return $actionString;
     }
 
 }

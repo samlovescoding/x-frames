@@ -25,6 +25,7 @@
 |   0.9.4           |         0.9.4           |       (Untested) Model Relations                                       |
 |   0.9.6           |         0.9.4           |       Cache                                                            |
 |   0.9.6           |         0.9.4           |       Added Error Controller                                           |
+|   x.x.x           |         0.9.4           |       Quality of Life improvements to url handling and router          |
 |----------------------------------------------------------------------------------------------------------------------|
 |   Guess Schedule  |         Released        |       Unscheduled Feature Name                                         |
 |----------------------------------------------------------------------------------------------------------------------|

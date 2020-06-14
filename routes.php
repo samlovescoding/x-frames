@@ -3,9 +3,11 @@
 use XFrames\Library\Authentication;
 use XFrames\Utility\Route;
 
-Route::get("/", "HomeController@welcome");
+Route::get("/", "HomeController@welcome")->name("home");
 
 Route::get("/dashboard", "HomeController@dashboard");
+
+Route::get("/users/:id", "HomeController@user");
 
 // Authentication Routes
 Route::get("/logout", "Authentication\\LogoutController@handle");

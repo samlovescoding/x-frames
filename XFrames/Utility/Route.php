@@ -54,7 +54,7 @@ class Route{
 
         $_ROUTES[$name] = array_merge($_ROUTES[$name], $route);
         
-        return $route;
+        return $action;
     }
 }
 
