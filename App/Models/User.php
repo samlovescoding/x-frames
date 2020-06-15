@@ -7,6 +7,8 @@ use XFrames\Database\Model;
 
 class User extends Model implements Authenticatable{
     
+    protected $table = "users";
+
     public function attempt($username, $password){
 
         $this->where([

@@ -37,21 +37,22 @@ trait OneToOne
 
         if($foreignKey == null) {
 
-            $myTableName = $this->getTableName();
+            $myTableName = $model->getTableName();
 
-            $foreignKey = $myTableName . "_" . $this->getIndexColumn();
+            $foreignKey = $myTableName . "_" . $model->getIndexColumn();
 
         }
 
+        
         if($foreignValue == null){
-
-            $foreignValue = $this->getIndex();
-
+            
+            $foreignValue = $this->{$foreignKey};
+            
         }
 
         return $model->where([
 
-            $foreignKey => $foreignValue
+            $model->getIndexColumn() => $foreignValue
 
         ])->first();
 

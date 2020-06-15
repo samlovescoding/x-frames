@@ -10,13 +10,13 @@ class RegisterController{
 
         return request()->validate([
 
-            "name" => "required",
+            "name" => "is_required",
 
-            "email" => "required",
+            "email" => "is_required",
 
-            "username" => "required",
+            "username" => "is_required",
 
-            "password" => "required"
+            "password" => "is_required"
 
         ]);
 

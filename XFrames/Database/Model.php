@@ -201,7 +201,7 @@ class Model implements RouteParameter
         return null;
     }
 
-    protected function resovleModel($model)
+    protected function resolveModel($model)
     {
 
         if (is_string($model)) {
@@ -240,6 +240,26 @@ class Model implements RouteParameter
 
         return $this;
 
+    }
+
+    public function where($whereColumns = []){
+        $this->queryBuilder->where($whereColumns);
+        return $this;
+    }
+
+    public function limit(int $limit){
+        $this->queryBuilder->limit($limit);
+        return $this;
+    }
+
+    public function offset(int $offset){
+        $this->queryBuilder->offset($offset);
+        return $this;
+    }
+
+    public function order(string $column, string $order = "ASC"){
+        $this->queryBuilder->order($column, $order);
+        return $this;
     }
 
 }

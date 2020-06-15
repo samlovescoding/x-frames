@@ -1,7 +1,6 @@
 |----------------------------------------------------------------------------------------------------------------------|
 |   Scheduled       |         Released        |       Feature Name                                                     |
 |----------------------------------------------------------------------------------------------------------------------|
-|   0.9.8           |         x.x.x           |       Chained Eager Loading Models using WHERE id IN () & Pre loaded   |
 |   0.9.9           |         x.x.x           |       Unit Testing with PHPUnit                                        |
 |   0.9.10          |         x.x.x           |       Tests for XFrames                                                |
 |   1.0.0           |         x.x.x           |       Release                                                          |
@@ -11,14 +10,13 @@
 |   1.0.1           |         x.x.x           |       Component State                                                  |
 |   1.0.1           |         x.x.x           |       Sample Components -> Fragment, Divs, Inputs, InputGroups         |
 |   1.0.2           |         x.x.x           |       Live Components                                                  |
-|   1.0.3           |         x.x.x           |       Routing in Doctrine Annotations                                  |
 |----------------------------------------------------------------------------------------------------------------------|
 |   Scheduled       |         Released        |       Completed Features                                               |
 |----------------------------------------------------------------------------------------------------------------------|
 |   0.9.3           |         0.9.3           |       View Import Parameters                                           |
 |   0.9.3           |         0.9.3           |       Webpack with font loader                                         |
 |   0.9.8           |         0.9.3           |       Remove all the component stuff                                   |
-|   0.9.4           |         0.9.4           |       (Untested) Eager Loading Models                                  |
+|   0.9.4           |         0.9.4           |       Eager Loading using with function                                |
 |   0.9.4           |         0.9.4           |       (Untested) Model Relations                                       |
 |   0.9.6           |         0.9.4           |       Cache                                                            |
 |   0.9.6           |         0.9.4           |       Added Error Controller                                           |
@@ -35,4 +33,6 @@
 |   x.x.xx          |         x.x.xx          |       Polymorphic Relations in Models                                  |
 |   x.x.xx          |         x.x.xx          |       GUI based Installation                                           |
 |   0.9.4           |         x.x.x           |       Pivot Tables in Models                                           |
+|   0.9.8           |         x.x.x           |       Chained Eager Loading Models using WHERE id IN () & Pre loaded   |
+|   1.0.3           |         x.x.x           |       Routing with Doctrine Annotations                                |
 |----------------------------------------------------------------------------------------------------------------------|
