@@ -1,8 +1,6 @@
 |----------------------------------------------------------------------------------------------------------------------|
 |   Scheduled       |         Released        |       Feature Name                                                     |
 |----------------------------------------------------------------------------------------------------------------------|
-|   0.9.6           |         x.x.x           |       Session Decay Data                                               |
-|   0.9.7           |         x.x.x           |       Middleware --> Throttler Middleware                              |
 |   0.9.8           |         x.x.x           |       Chained Eager Loading Models using WHERE id IN () & Pre loaded   |
 |   0.9.9           |         x.x.x           |       Unit Testing with PHPUnit                                        |
 |   0.9.10          |         x.x.x           |       Tests for XFrames                                                |
@@ -27,6 +25,8 @@
 |   x.x.x           |         0.9.4           |       Quality of Life improvements to url handling and router          |
 |   0.9.5           |         0.9.5           |       Middleware                                                       |
 |   0.9.5           |         0.9.5           |       Middleware --> Authentication Middleware                         |
+|   0.9.6           |         0.9.6           |       Session Decay Data                                               |
+|   0.9.7           |         0.9.6           |       Middleware --> Throttler Middleware                              |
 |----------------------------------------------------------------------------------------------------------------------|
 |   Guess Schedule  |         Released        |       Unscheduled Feature Name                                         |
 |----------------------------------------------------------------------------------------------------------------------|
