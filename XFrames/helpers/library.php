@@ -46,12 +46,6 @@ function content(){
 
 }
 
-function redirect($to){
-
-    header("Location:" . $to);
-
-}
-
 function emit($event, $data = null){
 
     if(is_string($event)){

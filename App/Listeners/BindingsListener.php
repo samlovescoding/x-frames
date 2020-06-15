@@ -4,9 +4,9 @@ namespace App\Listeners;
 
 use XFrames\Blueprints\Listener;
 use XFrames\Database\QueryBuilder;
-use XFrames\Library\Configuration;
 use XFrames\Utility\Request;
 use XFrames\Utility\Session;
+use XFrames\Utility\Redirector;
 
 class BindingsListener implements Listener{
 
@@ -17,10 +17,10 @@ class BindingsListener implements Listener{
         singleton(View::class);
         
         singleton(QueryBuilder::class);
-        
+
         singleton(Request::class);
 
-        singleton(Configuration::class);
+        singletonAndResolve(Redirector::class);
 
     }
 

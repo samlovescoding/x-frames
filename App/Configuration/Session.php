@@ -22,24 +22,41 @@ class Session{
         "driver" => "default",
 
         /*
-         *
-         * Save Directory
+         * Decay Time
          * 
-         * It defines the directory name under the files
-         * FileSystem. Please note the trailing slash.
+         * It defines time in which decay items will decay.
          * 
          */
-        "directory" => "sessions/",
+
+        "decayTime" => 5 * 60,
 
         /*
-         *
-         * Time To Live
+         * Throttler Key
          * 
-         * How long the session data is stored for. By
-         * default, it is 3 days. 
+         * It defines the key to use to store throttling
+         * data by the Throttling Middleware
          * 
          */
-        "ttl" => 3 * 24 * 60 * 60,
+
+        "throttlerKey" => "throttler",
+
+        /*
+         * Authentication Key
+         *
+         * It defines the key to use to store authenticated user.
+         * For example, this will be used in the session.
+         *
+         */
+        "authenticationKey" => "authenticatedUser",
+
+        /*
+         * Previous Route Key
+         *
+         * It saves the current route url. It is required to use
+         * redirect()->back()
+         *
+         */
+        "previousRouteKey" => "previousRoute"
         
     ];
 }

@@ -107,4 +107,47 @@ class Session{
     
     }
 
+    public function setDecay($key, $data, $decayTime = null){
+
+        if($decayTime == null){
+            $decayTime = config("session")->getDecayTime();
+        }
+
+        $decayItem = new SessionDecayItem($data, $decayTime, time());
+
+        $this->set($key, $decayItem);
+
+        return $this;
+
+    }
+
+    public function getDecay($key){
+
+        return $this->get($key)->getData();
+
+    }
+
+    public function validDecay($key){
+
+        if(!$this->has($key)){
+            return false;
+        }
+
+        $decayItem = $this->get($key);
+
+        if($decayItem->expired()){
+            return false;
+        }
+
+        return true;
+
+    }
+
+    public function updateDecay($key, $data){
+        $decayItem = $this->get($key);
+        $decayItem->setData($data);
+        $this->set($key, $decayItem);
+        return $this;
+    }
+
 }

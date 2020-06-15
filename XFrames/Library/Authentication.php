@@ -78,14 +78,14 @@ class Authentication{
 
         $session = resolve(Session::class);
 
-        return $session->get("authentication_user");
+        return $session->get(static::getAuthenticationKey());
     }
 
     public static function check(){
         
         $session = resolve(Session::class);
 
-        return $session->has("authentication_user");
+        return $session->has(static::getAuthenticationKey());
 
     }
 
@@ -93,7 +93,7 @@ class Authentication{
         
         $session = resolve(Session::class);
 
-        $session->set("authentication_user", $user);
+        $session->set(static::getAuthenticationKey(), $user);
 
     }
 
@@ -101,8 +101,12 @@ class Authentication{
 
         $session = resolve(Session::class);
 
-        $session->delete("authentication_user");
+        $session->delete(static::getAuthenticationKey());
 
+    }
+
+    static public function getAuthenticationKey(){
+        return config("session")->getAuthenticationKey();
     }
 
 

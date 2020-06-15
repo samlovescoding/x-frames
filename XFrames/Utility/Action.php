@@ -4,6 +4,7 @@ namespace XFrames\Utility;
 
 use XFrames\Blueprints\RouteParameter;
 use XFrames\Blueprints\Runnable;
+use XFrames\Exceptions\UnknownMiddleware;
 use XFrames\Library\Router;
 
 class Action extends Runnable{
@@ -17,6 +18,8 @@ class Action extends Runnable{
     protected $isStatic;
 
     protected $router;
+
+    protected $middlewares = [];
 
     public function __construct($className = null, string $method = "dd", bool $isStatic = false, string $name = null) {
 
@@ -37,6 +40,19 @@ class Action extends Runnable{
 
     public function getName(){
         return $this->name;
+    }
+
+    public function middleware($middleware){
+
+        $middlewares = func_get_args();
+        foreach ($middlewares as $middleware) {
+            $this->middlewares[] = $middleware;
+        }
+        return $this;
+    }
+
+    public function getMiddlewares(){
+        return $this->middlewares;
     }
 
     /*

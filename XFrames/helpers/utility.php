@@ -1,8 +1,9 @@
 <?php
 
 use XFrames\Library\Validator;
-use XFrames\Utility\{ Collection, Request, Session, Str };
+use XFrames\Utility\{ Collection, Request, Session, Str, Redirector };
 use XFrames\Exceptions\UnknownAction;
+use XFrames\Exceptions\UnknownMiddleware;
 
 function collect($array = []){
 
@@ -145,4 +146,26 @@ function route($name, $parameters = []){
         }
     }
     throw new UnknownAction("Route name '$name' was not found in the defined routes.");
+}
+
+
+function redirect($to = null){
+
+    if($to == null){
+        return resolve(Redirector::class);
+    }
+    
+    return resolve(Redirector::class)->redirect($to);
+
+}
+
+function resolveMiddleware($middleware){
+    if(!class_exists($middleware)){
+        $middleware = config("middlewares")->getMap()[$middleware];
+    }
+    
+    if(!class_exists($middleware)){
+        throw new UnknownMiddleware("This route depends upon an unknown middleware '$middleware'.");
+    }
+    return resolve($middleware);
 }

@@ -2,6 +2,8 @@
 
 namespace XFrames\Library;
 
+use XFrames\Exceptions\UnknownMiddleware;
+
 class Router{
 
     public $currentRouteURI;
@@ -204,11 +206,38 @@ class Router{
      */
     public function dispatch(){
 
+        global $_CURRENT_ROUTE;
+
         $currentAction = $this->getCurrentRoute();
+
+        $_CURRENT_ROUTE = $this->currentRouteURI->get();
 
         emit(config("events")->getApplicationMount(), $currentAction);
 
-        return $currentAction->run($this);
+        foreach ($currentAction->getMiddlewares() as $middleware) {
+            
+            $middleware = resolveMiddleware($middleware);
+
+            if(method_exists($middleware, "before")){
+                $middleware->before();
+            }
+            if(method_exists($middleware, "handle")){
+                $middleware->handle();
+            }
+        }
+
+        $currentActionReturn = $currentAction->run($this);
+
+        foreach ($currentAction->getMiddlewares() as $middleware) {
+            
+            $middleware = resolveMiddleware($middleware);
+
+            if(method_exists($middleware, "after")){
+                $middleware->after();
+            }
+        }
+
+        return $currentActionReturn;
 
     }
     

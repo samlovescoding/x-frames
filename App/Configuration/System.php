@@ -50,7 +50,7 @@ class System{
          * 
          */
 
-         "viewsFolder" => "App/Views/"
+         "viewsFolder" => "App/Views/",
         
     ];
 }

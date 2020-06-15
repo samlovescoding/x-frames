@@ -78,6 +78,8 @@ class CommandLine{
 
         $this->printline("6. Policy");
 
+        $this->printline("7. Middleware");
+
     }
 
     public function render(){
@@ -121,6 +123,12 @@ class CommandLine{
             case '6':
 
                 $this->policy();
+
+            break;
+
+            case '7':
+
+                $this->middleware();
 
             break;
 
@@ -271,6 +279,24 @@ class CommandLine{
         echo "Created a policy at " . $policyPath;
 
         $this->save($stub, $policyPath);
+
+    }
+
+    public function middleware(){
+
+        $title = $this->inputline("Enter middleware class: ");
+
+        $namespace = "App\\Middlewares\\";
+
+        $path = str_replace("\\", "/", $namespace . $title . ".php");
+
+        $stub = $this->stub("middleware", [
+            "middleware" => $title
+        ]);
+
+        echo "Created a listener at " . $path;
+
+        $this->save($stub, $path);
 
     }
 

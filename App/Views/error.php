@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to X Framework</title>
+    <title>An error occurred</title>
     <style>
         *{
             margin: 0;
@@ -22,12 +22,26 @@
             font-size: 72px;
             text-align:center;
         }
+        p{
+            font-family:'Segoe UI Light', Tahoma, Geneva, Verdana, sans-serif;
+            text-align:center;
+
+        }
     </style>
     <script src="/main.js"></script>
 </head>
 <body>
     <h1>
-        X-Framework
+        <?php
+            if(isset($title)){
+                echo $title;
+            }else{
+                echo "Some Error Occurred";
+            }
+        ?>
     </h1>
+    <p>
+        Entropy: <?=rand(100000, 999999)?>
+    </p>
 </body>
 </html>

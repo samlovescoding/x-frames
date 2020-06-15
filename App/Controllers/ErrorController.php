@@ -9,13 +9,17 @@ class ErrorController
 
     public function unauthorizedAction(){
 
-        echo "401 - The action is forbidden.";
+        return view("error", [
+            "title" => "You are not authorized to do that."
+        ]);
 
     }
 
     public function fileNotFound(){
 
-        echo "404 - File Not Found";
+        return view("error", [
+            "title" => "File Not Found"
+        ]);
 
     }
 

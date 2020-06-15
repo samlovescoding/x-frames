@@ -1,0 +1,12 @@
+<?php
+
+namespace App\Middlewares;
+
+class {middleware}
+{
+
+    public function handle(){
+
+    }
+
+}

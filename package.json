@@ -8,7 +8,9 @@
     "dump-autoload": "composer dump-autoload",
     "webpack": "webpack --config webpack.config.js",
     "watch": "webpack --config webpack.config.js --watch",
-    "build": "composer dump-autoload && webpack --config webpack.config.js",
+    "build": "webpack --config webpack.config.js && npm run production",
+    "dev":"composer update $$ composer dump-autoload",
+    "production":"composer update --no-dev && composer dump-autoload",
     "serve": "concurrently \"cd public_html && php -S localhost:8008\" \"opener http://localhost:8008\""
   },
   "keywords": [
