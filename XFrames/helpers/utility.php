@@ -11,7 +11,7 @@ function collect($array = []){
 
 }
 
-function str($data){
+function str($data = ""){
 
     return resolve(Str::class)->set($data);
 

@@ -176,13 +176,11 @@ class Str implements RouteParameter{
 
     }
 
-    public function camelCase($from = self::SNAKE_CASE){
+    public function pascalCase($from = self::SNAKE_CASE){
 
         $this->data = collect( $this->tokenizeFromCase($from) )
             ->map(function($index, $key){
-
                 return ucfirst($key);
-
             })            
             ->join("");
         
@@ -190,7 +188,7 @@ class Str implements RouteParameter{
 
     }
 
-    public function pascalCase($from = self::SNAKE_CASE){
+    public function camelCase($from = self::SNAKE_CASE){
 
         $this->data = collect( $this->tokenizeFromCase($from) )            
             ->map(function($index, $key){

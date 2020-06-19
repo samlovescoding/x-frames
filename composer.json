@@ -3,6 +3,9 @@
     "type": "project",
     "description": "The X Framework.",
     "license" : "ISC",
+    "scripts": {
+        "test": "phpunit"
+    },
     "keywords": [
         "framework",
         "components",
