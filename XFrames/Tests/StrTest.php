@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Framework;
+namespace XFrames\Tests;
 
 use PHPUnit\Framework\TestCase;
 use XFrames\Exceptions\CallToUnknown;

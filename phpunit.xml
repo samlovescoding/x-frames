@@ -7,10 +7,10 @@
 >
     <testsuites>
         <testsuite name="Unit">
-            <directory suffix="Test.php">./tests/Unit</directory>
+            <directory suffix="Test.php">./Tests</directory>
         </testsuite>
         <testsuite name="Framework">
-            <directory suffix="Test.php">./tests/Framework</directory>
+            <directory suffix="Test.php">./XFrames/Tests</directory>
         </testsuite>
     </testsuites>
 </phpunit>

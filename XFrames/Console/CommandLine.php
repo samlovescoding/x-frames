@@ -80,6 +80,8 @@ class CommandLine{
 
         $this->printline("7. Middleware");
 
+        $this->printline("8. Unit Test");
+
     }
 
     public function render(){
@@ -129,6 +131,12 @@ class CommandLine{
             case '7':
 
                 $this->middleware();
+
+            break;
+
+            case '8':
+
+                $this->unitTest();
 
             break;
 
@@ -238,7 +246,7 @@ class CommandLine{
             "event" => $eventTitle
         ]);
 
-        echo "Created a event at " . $eventPath;
+        echo "Created an event at " . $eventPath;
 
         $this->save($stub, $eventPath);
 
@@ -294,7 +302,25 @@ class CommandLine{
             "middleware" => $title
         ]);
 
-        echo "Created a listener at " . $path;
+        echo "Created a middleware at " . $path;
+
+        $this->save($stub, $path);
+
+    }
+
+    public function unitTest(){
+
+        $title = $this->inputline("Enter test name: ") . "Test";
+
+        $namespace = "Tests\\";
+
+        $path = str_replace("\\", "/", $namespace . $title . ".php");
+
+        $stub = $this->stub("test", [
+            "test" => $title
+        ]);
+
+        echo "Created a test at " . $path;
 
         $this->save($stub, $path);
 
