@@ -31,7 +31,7 @@
 |   0.9.5           |         0.9.5           |       Middleware --> Authentication Middleware                         |
 |   0.9.6           |         0.9.6           |       Session Decay Data                                               |
 |   0.9.7           |         0.9.6           |       Middleware --> Throttler Middleware                              |
-|   0.9.9           |         0.9.8           |       Unit Testing with PHPUnit                                        |
+|   0.9.9           |         0.9.7           |       Unit Testing with PHPUnit                                        |
 |----------------------------------------------------------------------------------------------------------------------|
 |   Guess Schedule  |         Released        |       Unscheduled Feature Name                                         |
 |----------------------------------------------------------------------------------------------------------------------|
