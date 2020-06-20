@@ -1,12 +1,6 @@
 |----------------------------------------------------------------------------------------------------------------------|
 |   Scheduled       |         Released        |       Feature Name                                                     |
 |----------------------------------------------------------------------------------------------------------------------|
-|   0.9.11          |         x.x.x           |       Tests for XFrames (Request, Session)                             |
-|   0.9.12          |         x.x.x           |       Tests for XFrames (Router, Action, Route)                        |
-|   0.9.13          |         x.x.x           |       Tests for XFrames (Validator)                                    |
-|   0.9.14          |         x.x.x           |       Tests for XFrames (Authentication, View, Container, Config)      |
-|   0.9.15          |         x.x.x           |       Tests for XFrames (File, Folder, Storage)                        |
-|   0.9.16          |         x.x.x           |       Tests for XFrames (Cache)                                        |
 |   1.0.0           |         x.x.x           |       Release                                                          |
 |   1.0.1           |         x.x.x           |       Components                                                       |
 |   1.0.1           |         x.x.x           |       Components Request                                               |
@@ -34,6 +28,7 @@
 |   0.9.7           |         0.9.6           |       Middleware --> Throttler Middleware                              |
 |   0.9.9           |         0.9.7           |       Unit Testing with PHPUnit                                        |
 |   0.9.10          |         0.9.8           |       Tests for XFrames (Str, Collection)                              |
+|   0.9.11          |         x.x.x           |       Tests for XFrames (Request)                                      |
 |----------------------------------------------------------------------------------------------------------------------|
 |   Guess Schedule  |         Released        |       Unscheduled Feature Name                                         |
 |----------------------------------------------------------------------------------------------------------------------|
@@ -44,4 +39,5 @@
 |   0.9.4           |         x.x.x           |       Pivot Tables in Models                                           |
 |   0.9.8           |         x.x.x           |       Chained Eager Loading Models using WHERE id IN () & Pre loaded   |
 |   1.0.3           |         x.x.x           |       Routing with Doctrine Annotations                                |
+|   1.0.3           |         x.x.x           |       Add Kernel Loader to Unit Tests                                  |
 |----------------------------------------------------------------------------------------------------------------------|

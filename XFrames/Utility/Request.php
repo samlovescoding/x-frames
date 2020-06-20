@@ -64,7 +64,7 @@ class Request{
 
     public function validate($rules) {
 
-        $this->validator->setRequest($this);
+        //$this->validator->setRequest($this);
         
         $this->validator->setRules($rules);
 

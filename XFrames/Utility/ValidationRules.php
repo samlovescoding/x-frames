@@ -10,7 +10,6 @@ class ValidationRules{
     ];
 
     public function is_required($key, $value){
-        
         if(isset($_REQUEST[$key]) && $_REQUEST[$key] == $value){
         
             return true;
