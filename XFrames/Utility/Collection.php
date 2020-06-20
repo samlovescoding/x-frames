@@ -61,6 +61,8 @@ class Collection{
 
         $this->array = array_merge($this->array, $with);
 
+        return $this;
+
     }
 
     public function join($glue = " "){
@@ -149,7 +151,7 @@ class Collection{
 
     public function hasAtleast($n){
 
-        if($this->length() > $n){
+        if($this->length() >= $n){
 
             return true;
 

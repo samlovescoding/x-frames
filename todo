@@ -1,7 +1,6 @@
 |----------------------------------------------------------------------------------------------------------------------|
 |   Scheduled       |         Released        |       Feature Name                                                     |
 |----------------------------------------------------------------------------------------------------------------------|
-|   0.9.10          |         x.x.x           |       Tests for XFrames (Str, Collection)                              |
 |   0.9.11          |         x.x.x           |       Tests for XFrames (Request, Session)                             |
 |   0.9.12          |         x.x.x           |       Tests for XFrames (Router, Action, Route)                        |
 |   0.9.13          |         x.x.x           |       Tests for XFrames (Validator)                                    |
@@ -16,6 +15,8 @@
 |   1.0.1           |         x.x.x           |       Sample Components -> Fragment, Divs, Inputs, InputGroups         |
 |   1.0.2           |         x.x.x           |       Live Components                                                  |
 |   1.0.3           |         x.x.x           |       Validated Request Class                                          |
+|   1.0.4           |         x.x.x           |       new DB Namespace. Deprecate Database Namespace                   |
+|   2.0.0           |         x.x.x           |       Remove Database Namespace                                        |
 |----------------------------------------------------------------------------------------------------------------------|
 |   Scheduled       |         Released        |       Completed Features                                               |
 |----------------------------------------------------------------------------------------------------------------------|
@@ -32,6 +33,7 @@
 |   0.9.6           |         0.9.6           |       Session Decay Data                                               |
 |   0.9.7           |         0.9.6           |       Middleware --> Throttler Middleware                              |
 |   0.9.9           |         0.9.7           |       Unit Testing with PHPUnit                                        |
+|   0.9.10          |         0.9.8           |       Tests for XFrames (Str, Collection)                              |
 |----------------------------------------------------------------------------------------------------------------------|
 |   Guess Schedule  |         Released        |       Unscheduled Feature Name                                         |
 |----------------------------------------------------------------------------------------------------------------------|
