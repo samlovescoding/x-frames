@@ -30,4 +30,10 @@ trait Stringable {
 
     }
 
+    public function __toString(){
+
+        return $this->get();
+
+    }
+
 }
