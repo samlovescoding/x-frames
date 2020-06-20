@@ -52,6 +52,10 @@ class Request{
 
     }
 
+    public function hasFile($key){
+        return isset($_FILES[$key]);
+    }
+
     public function file($key) {
 
         return new UploadedFile($key);
