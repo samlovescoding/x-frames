@@ -1,8 +1,13 @@
 |----------------------------------------------------------------------------------------------------------------------|
 |   Scheduled       |         Released        |       Feature Name                                                     |
 |----------------------------------------------------------------------------------------------------------------------|
-|   0.9.9           |         x.x.x           |       Unit Testing with PHPUnit                                        |
-|   0.9.10          |         x.x.x           |       Tests for XFrames                                                |
+|   0.9.10          |         x.x.x           |       Tests for XFrames (Str, Collection)                              |
+|   0.9.11          |         x.x.x           |       Tests for XFrames (Request, Session)                             |
+|   0.9.12          |         x.x.x           |       Tests for XFrames (Router, Action, Route)                        |
+|   0.9.13          |         x.x.x           |       Tests for XFrames (Validator)                                    |
+|   0.9.14          |         x.x.x           |       Tests for XFrames (Authentication, View, Container, Config)      |
+|   0.9.15          |         x.x.x           |       Tests for XFrames (File, Folder, Storage)                        |
+|   0.9.16          |         x.x.x           |       Tests for XFrames (Cache)                                        |
 |   1.0.0           |         x.x.x           |       Release                                                          |
 |   1.0.1           |         x.x.x           |       Components                                                       |
 |   1.0.1           |         x.x.x           |       Components Request                                               |
@@ -25,6 +30,7 @@
 |   0.9.5           |         0.9.5           |       Middleware --> Authentication Middleware                         |
 |   0.9.6           |         0.9.6           |       Session Decay Data                                               |
 |   0.9.7           |         0.9.6           |       Middleware --> Throttler Middleware                              |
+|   0.9.9           |         x.x.x           |       Unit Testing with PHPUnit                                        |
 |----------------------------------------------------------------------------------------------------------------------|
 |   Guess Schedule  |         Released        |       Unscheduled Feature Name                                         |
 |----------------------------------------------------------------------------------------------------------------------|
