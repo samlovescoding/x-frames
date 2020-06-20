@@ -6,46 +6,31 @@ use App\Models\User;
 
 class RegisterController{
 
-    public function validateRequest(){
-
-        return request()->validate([
-
-            "name" => "is_required",
-
-            "email" => "is_required",
-
-            "username" => "is_required",
-
-            "password" => "is_required"
-
-        ]);
-
-    }
-
     public function handle(){
-
-        $validatedRequest = $this->validateRequest();
-
-        $validatedRequest = array_merge($validatedRequest, [
-
-            "created_at" => date("Y-m-d H:i:s"),
-
-            "updated_at" => date("Y-m-d H:i:s")
-
+        $validatedRequest = request()->validate([
+            "name" => "is_required|is_min:6|is_max:64",
+            "email" => "is_required|is_min:6|is_max:64",
+            "username" => "is_required|is_min:6|is_max:32",
+            "password" => "is_required|is_min:6|is_max:256"
         ]);
 
-        (new User)->create($validatedRequest);
+        if(request()->failed()){
+            return redirect("/register");
+        }
         
-        redirect("/login");
+        $validatedRequest = array_merge($validatedRequest, [
+            "created_at" => date("Y-m-d H:i:s"),
+            "updated_at" => date("Y-m-d H:i:s")
+        ]);
 
+        (new User)->create($validatedRequest);        
+        return redirect("/login");
     }
 
     public function form(){
 
         return view("authentication/register", [
-
             "title" => "Registeration"
-
         ]);
 
     }

@@ -18,4 +18,8 @@ class ValidationError{
 
     }
 
+    public function getMessage(){
+        return $this->getRule();
+    }
+
 }

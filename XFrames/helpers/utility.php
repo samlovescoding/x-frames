@@ -45,10 +45,19 @@ function getClassesUnderNamespace($namespace){
 
 }
 
+function d($data = null){
+    return var_dump($data);
+    if(is_object($data)){
+        foreach($data as $key => $value) {
+            echo "$key => " . d($value) . "\n";
+        }
+    }else{
+        var_dump($data);
+    }
+}
+
 function dd($data = null){
-
-    var_dump($data);
-
+    d($data);
     die();
 
 }

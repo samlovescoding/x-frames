@@ -30,6 +30,6 @@ class Cache{
          * in seconds.
          * 
          */
-        "timeToLive" => 2 * 60,
+        "timeToLive" => 10 * 60,
     ];
 }

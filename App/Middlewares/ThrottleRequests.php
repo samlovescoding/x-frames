@@ -25,6 +25,11 @@ class ThrottleRequests
                 "title" => "Too many request. Please wait some time before retrying."
             ])->render();
             die();
+            // Yes Yes, I know thats not a good way to implement middleware errors.
+            // Yes there should be a middleware chain but this is so easy to implement
+            // and until each middleware renders a single view, it's OK. We dont need
+            // complex architectures to solve complex problems. We just need to divide
+            // the problem.
         }
 
     }

@@ -4,6 +4,7 @@
     <div class="row">
         <div class="col-6 offset-3">
             <h3 class="pb-5">Login Form</h3>
+            <?php import("authentication/messages"); ?>
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" class="form-control">

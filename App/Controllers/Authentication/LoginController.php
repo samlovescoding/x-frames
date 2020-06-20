@@ -11,26 +11,27 @@ class LoginController
     public function handle()
     {
 
+        request()->validate([
+            "username" => "is_required|is_min:6",
+            "password" => "is_required|is_min:6"
+        ]);
+
+        if(request()->failed()){
+            return redirect("/login");
+        }
+
         $user = new User;
 
         $userAttempt = $user->attempt(
-
             request()->username,
-
             request()->password
-
         );
 
         if ($userAttempt != false) {
-
             Authentication::remember($userAttempt);
-
-            redirect("/dashboard");
-
+            return redirect("/dashboard");
         } else {
-
-            redirect("/login");
-
+            return redirect("/login");
         }
 
     }

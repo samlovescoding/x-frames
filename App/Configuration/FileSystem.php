@@ -21,6 +21,14 @@ class FileSystem{
          */
         "publicPath" => "public_html/",
 
+        /*
+         *
+         * Storages
+         * 
+         * It defines folders to use when a relevant storage is
+         * requests.
+         * 
+         */
         "storage" => [
 
             "uploads" => "public_html/uploads/",
